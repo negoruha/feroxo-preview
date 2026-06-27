@@ -1,0 +1,14 @@
+FEROXO PREVIEW — PRE-FLIGHT CHECK
+
+Checked before packaging:
+- 30 HTML pages found.
+- 1,572 local HTML references checked: 0 broken.
+- CSS asset references checked: 0 broken.
+- JavaScript syntax check: passed.
+- PHP syntax check: passed.
+- 28 Make Request forms checked: POST + multipart/form-data + name/email/privacy fields present.
+- PHP request handler tested with an invalid POST: returns a 303 validation redirect.
+- PHP request handler tested with GET: returns a 303 method redirect.
+
+Production note:
+- The actual outgoing email must still be tested on FORPSI, because its server mail configuration is not available in this preview environment.

@@ -1,0 +1,152 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="theme-color" content="#BF2121"/>
+  <title>Feroxo — Industrial Welding Equipment</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="css/style.css"/>
+</head>
+<body>
+<div class="page home-page">
+  <section class="hero" aria-label="Feroxo featured welding equipment">
+    <div class="hero__media" data-hero-media>
+      <div class="hero__track" data-hero-track>
+        <button class="hero__slide is-active" data-hero-slide data-hero-play type="button" aria-label="Play Feroxo field video"><img class="hero__image" src="assets/images/home-figma/hero.jpg" alt="Feroxo welding generator on a pickup truck"/></button>
+        <button class="hero__slide" data-hero-slide data-hero-play type="button" aria-label="Play Feroxo field video"><img class="hero__image" src="assets/images/home-figma/news-01.jpg" alt="Feroxo equipment in the field"/></button>
+        <button class="hero__slide" data-hero-slide data-hero-play type="button" aria-label="Play Feroxo field video"><img class="hero__image" src="assets/images/home-figma/news-02.jpg" alt="Feroxo field demonstration"/></button>
+        <button class="hero__slide" data-hero-slide data-hero-play type="button" aria-label="Play Feroxo field video"><img class="hero__image" src="assets/images/home-figma/news-03.jpg" alt="Feroxo welding application"/></button>
+        <button class="hero__slide" data-hero-slide data-hero-play type="button" aria-label="Play Feroxo field video"><img class="hero__image" src="assets/images/home-figma/hero.jpg" alt="Feroxo welding generator on a pickup truck"/></button>
+      </div>
+      <video class="hero__video" controls data-hero-video playsinline poster="assets/images/home-figma/hero.jpg" preload="metadata"><source src="assets/videos/hero-demo.mp4" type="video/mp4"/></video>
+    </div>
+    <header class="site-header" data-site-header>
+      <a class="site-header__logo" href="index.html" aria-label="Feroxo homepage"><img src="assets/logo/feroxo-logo.svg" alt="Feroxo"/></a>
+      <button class="site-menu-toggle" type="button" aria-label="Open site navigation" aria-expanded="false" data-menu-toggle><span></span><span></span><span></span></button>
+      <nav class="site-nav" aria-label="Main navigation">
+        <a class="site-nav__link" href="pages/about.html">About Us</a>
+        <a class="site-nav__link" href="pages/products.html">Products</a>
+        <a class="site-nav__link" href="pages/service.html">Service</a>
+        <a class="site-nav__link" href="pages/resources.html">Resources</a>
+        <a class="site-nav__link" href="pages/contact.html">Contact</a>
+      </nav>
+      <div class="site-header__actions">
+        <div class="language" data-language>
+          <button class="language__button" type="button" data-language-button aria-label="Choose language"><img src="assets/icons/language-globe.svg" alt=""/></button>
+          <div class="language__menu" aria-label="Language menu"><button data-lang-option="en" type="button"><img class="language__flag" src="assets/icons/flag-uk.svg" alt="United Kingdom flag"/><span>English</span></button><button data-lang-option="cz" type="button"><img class="language__flag" src="assets/icons/flag-cz.svg" alt="Czech Republic flag"/><span>Czech</span></button></div>
+        </div>
+        <button class="request-button" type="button" data-open-request>Make Request</button>
+      </div>
+    </header>
+    <button class="hero__side-arrow hero__side-arrow--prev" data-hero-prev type="button" aria-label="Previous slide">‹</button>
+    <button class="hero__side-arrow hero__side-arrow--next" data-hero-next type="button" aria-label="Next slide">›</button>
+    <div class="hero__slider-controls hero__slider-dots" data-hero-controls aria-label="Choose slide">
+      <button class="is-active" data-hero-dot="0" aria-label="Show slide 1"></button>
+      <button data-hero-dot="1" aria-label="Show slide 2"></button>
+      <button data-hero-dot="2" aria-label="Show slide 3"></button>
+      <button data-hero-dot="3" aria-label="Show slide 4"></button>
+      <button data-hero-dot="4" aria-label="Show slide 5"></button>
+    </div>
+  </section>
+
+  <main>
+    <section class="strengths" aria-label="Feroxo strengths">
+      <div class="strengths__accordion" data-strengths>
+        <article class="strength-card is-active" data-strength-card tabindex="0">
+          <img class="strength-card__image" src="assets/images/home-figma/strength-01.png" alt="Shindaiwa welding generator control panel"/>
+          <div class="strength-card__shade"></div>
+          <div class="strength-card__content"><h2>TRUE JAPANESE<br/>MANUFACTURING</h2><span class="strength-card__eyebrow">Not assembled — engineered</span><p>Every component in the DGW400DML/UKV — Kubota D902 engine, generator, electronics, structure — manufactured in Japan by Yamabiko Corporation. Over 60 years of proven engineering excellence.</p></div>
+          <span class="strength-card__tab-label">Engineered in Japan</span>
+        </article>
+        <article class="strength-card" data-strength-card tabindex="0">
+          <img class="strength-card__image" src="assets/images/home-figma/strength-02.jpg" alt="Welder operating in extreme conditions"/>
+          <div class="strength-card__shade"></div>
+          <div class="strength-card__content"><h2>BUILT FOR THE WORST —<br/>PERFORMS LIKE THE BEST</h2><span class="strength-card__eyebrow">Spill containment. No shelter required</span><p>IP44 protection. Spill containment prevents fuel and oil from entering water or soil. Brushless maintenance-free alternator. Works in rain, dust, sand and extreme temperatures — no shelter needed.</p></div>
+          <span class="strength-card__tab-label">Built for Extremes</span>
+        </article>
+        <article class="strength-card" data-strength-card tabindex="0">
+          <img class="strength-card__image" src="assets/images/home-figma/strength-03.jpg" alt="IGBT welding power electronics"/>
+          <div class="strength-card__shade"></div>
+          <div class="strength-card__content"><h2>PRECISE ARC WITH INSTANT<br/>PROCESS RESPONSE</h2><span class="strength-card__eyebrow">Advanced IGBT inverter — CC, CV, TIG, Droop, Gouging</span><p>IGBT inverter enables instant arc regulation and consistent weld quality. Supports CC, CV (MIG/MAG), Lift TIG, Scratch TIG, Droop (pipe mode) and Gouging — six welding processes from one machine.</p></div>
+          <span class="strength-card__tab-label">IGBT Power Control</span>
+        </article>
+        <article class="strength-card" data-strength-card tabindex="0">
+          <img class="strength-card__image" src="assets/images/home-figma/strength-04.jpg" alt="Two workers using a dual welding system"/>
+          <div class="strength-card__shade"></div>
+          <div class="strength-card__content"><h2>ONE ENGINE WITH DUAL<br/>WELDING POWER</h2><span class="strength-card__eyebrow">Real Dual — 2 independent posts + 12 kVA AC simultaneously</span><p>Galvanically isolated windings mean zero interference. Post 1: MMA. Post 2: MIG/MAG — simultaneously. Plus 12 kVA AC generator for tools and lighting. One machine replaces three.</p></div>
+          <span class="strength-card__tab-label">Real Dual System</span>
+        </article>
+        <article class="strength-card" data-strength-card tabindex="0">
+          <img class="strength-card__image" src="assets/images/home-figma/strength-05.jpg" alt="Feroxo unit at a rail-side deployment"/>
+          <div class="strength-card__shade"></div>
+          <div class="strength-card__content"><h2>UP TO 5× LOWER FUEL<br/>CONSUMPTION</h2><span class="strength-card__eyebrow">ROI from fuel savings in 3–12 months</span><p>Kubota D902 plus ECO Mode: 1.4–3.5 L/hr versus 8–12 L/hr for older equipment. A 43-litre tank provides up to 16 hours non-stop. Annual fuel savings can pay back the price difference within 12 months.</p></div>
+          <span class="strength-card__tab-label">Lower Cost</span>
+        </article>
+        <article class="strength-card" data-strength-card tabindex="0">
+          <img class="strength-card__image" src="assets/images/home-figma/strength-06.jpg" alt="Quiet Feroxo welding deployment"/>
+          <div class="strength-card__shade"></div>
+          <div class="strength-card__content"><h2>QUIET PERFORMANCE FOR DAY &amp;<br/>NIGHT OPERATION</h2><span class="strength-card__eyebrow">92 dB(A) LWA — certified EU 2000/14/ES</span><p>92 dB(A) LWA measured and certified. ECO Mode further reduces noise. Work in residential areas and city centres without violating noise regulations — day or night.</p></div>
+          <span class="strength-card__tab-label">Quiet Operation</span>
+        </article>
+        <article class="strength-card" data-strength-card tabindex="0">
+          <img class="strength-card__image" src="assets/images/home-figma/strength-07.jpg" alt="Stage V ready Feroxo generator"/>
+          <div class="strength-card__shade"></div>
+          <div class="strength-card__content"><h2>STAGE V READY FOR EU<br/>DEPLOYMENT</h2><span class="strength-card__eyebrow">Kubota D902 — certified Stage V across the whole EU</span><p>EU Stage V certified — the strictest emission standard for mobile machinery. Approved for unrestricted use across the entire EU.</p></div>
+          <span class="strength-card__tab-label">Stage V</span>
+        </article>
+        <article class="strength-card" data-strength-card tabindex="0">
+          <img class="strength-card__image" src="assets/images/home-figma/strength-08.jpg" alt="Feroxo service support team"/>
+          <div class="strength-card__shade"></div>
+          <div class="strength-card__content"><h2>3-YEAR WARRANTY WITH<br/>CZECH SERVICE SUPPORT</h2><span class="strength-card__eyebrow">Official Yamabiko distributor in the Czech Republic</span><p>3-year manufacturer warranty, certified service in Czech Republic, and spare parts in stock help keep professional equipment ready for field work.</p></div>
+          <span class="strength-card__tab-label">Service Confidence</span>
+        </article>
+      </div>
+      <h2 class="section-vertical-title strengths__title">Strengths</h2>
+    </section>
+
+    <section class="industries" aria-label="Industries we serve">
+      <div class="industries__side"><h2 class="section-vertical-title industries__title">Industries<br/>we serve</h2><div class="industries__controls"><button class="industries__control" data-industries-prev aria-label="Previous industry">‹</button><button class="industries__control" data-industries-next aria-label="Next industry">›</button></div></div>
+      <div class="industries__viewport" data-industries-viewport><div class="industries__track" data-industries-track>
+        <article class="industry-card"><img src="assets/images/home-figma/industry-01.jpg" alt="Petro-chemical industry"/><h3>Petro-chemical</h3></article>
+        <article class="industry-card"><img src="assets/images/home-figma/industry-06.jpg" alt="Rail welding"/><h3>Rail</h3></article>
+        <article class="industry-card"><img src="assets/images/home-figma/industry-02.png" alt="Construction project"/><h3>Construction</h3></article>
+        <article class="industry-card"><img src="assets/images/home-figma/industry-03.jpg" alt="Quarry and mining operations"/><h3>Quarry &amp; Mining</h3></article>
+        <article class="industry-card"><img src="assets/images/home-figma/industry-04.png" alt="Heating system"/><h3>Heating System</h3></article>
+        <article class="industry-card"><img src="assets/images/home-figma/industry-05.jpg" alt="Water utility"/><h3>Water Utility</h3></article>
+        <article class="industry-card"><img src="assets/images/home-figma/industry-07.jpg" alt="Offshore operations"/><h3>Offshore</h3></article>
+      </div></div>
+    </section>
+
+    <section class="built-industry" aria-label="Built for Industry">
+      <div class="built-industry__text-panel"><div class="built-industry__content"><h2>BUILT FOR<br/>INDUSTRY</h2><p>From advanced welding systems to reliable diesel generators — find equipment tailored for modern industrial operations.</p></div><a class="built-industry__button" href="pages/products.html">See Equipment</a></div>
+      <a class="built-industry__video-card" href="https://www.youtube.com/" target="_blank" rel="noopener" aria-label="Watch Feroxo field equipment video"><img class="built-industry__video" src="assets/images/home-figma/built-industry.png" alt="Feroxo equipment deployed on a pipeline project"/><span class="built-industry__play"><img src="assets/icons/play-circle-outline.svg" alt=""/></span></a>
+    </section>
+
+    <section class="latest-news" aria-label="Latest news and articles">
+      <div class="latest-news__heading"><h2>Latest News &amp; Articles</h2><a href="pages/resources.html">See All</a></div>
+      <div class="latest-news__grid">
+        <a class="latest-news__feature" href="pages/resources/why-reliability-matters-on-remote-construction-sites.html"><img src="assets/images/home-figma/news-feature.png" alt="Feroxo generator and welding work at a construction site"/><span>WHY RELIABILITY MATTERS ON REMOTE<br/>CONSTRUCTION SITES</span></a>
+        <div class="latest-news__stack">
+          <a href="pages/resources.html"><img src="assets/images/home-figma/news-01.jpg" alt="Feroxo equipment in the field"/><span>LOREM IPSUM<br/>DOLOR SIT AMET<br/>CONSECTETUR</span></a>
+          <a href="pages/resources.html"><img src="assets/images/home-figma/news-02.jpg" alt="Feroxo service work"/><span>MOREM IPSUM<br/>DOLOR SIT AMET<br/>CONSECTETUR</span></a>
+          <a href="pages/resources.html"><img src="assets/images/home-figma/news-03.jpg" alt="Feroxo welding work"/><span>SOREM IPSUM<br/>DOLOR SIT AMET<br/>CONSECTETUR</span></a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer aria-label="Feroxo footer" class="site-footer">
+    <div class="site-footer__brand"><a class="site-footer__logo" href="index.html" aria-label="Feroxo homepage"><img src="assets/footer/feroxo-footer-logo.svg" alt="Feroxo"/></a><p>Premium Japanese industrial<br/>equipment for the European market</p><div aria-label="Social links" class="site-footer__socials"><a href="#" aria-label="Instagram"></a><a href="#" aria-label="Facebook"></a><a href="#" aria-label="LinkedIn"></a><a href="#" aria-label="YouTube"></a></div></div>
+    <nav aria-label="Footer navigation" class="site-footer__nav"><div class="site-footer__column"><h3>Company</h3><a href="pages/about.html">About Us</a><a href="pages/products.html">Products</a><a href="pages/service.html">Service</a><a href="pages/resources.html">Resources</a><a href="pages/contact.html">Contact</a></div><div class="site-footer__column"><h3>Lorem ipsum</h3><a href="#">Lorem ipsum dolor</a><a href="#">Lorem ipsum dolor sit</a><a href="#">Lorem ipsum</a><a href="#">Lorem ipsum dolor</a><a href="#">Lorem ipsum</a></div><div class="site-footer__column"><h3>Lorem ipsum</h3><a href="#">Lorem ipsum dolor</a><a href="#">Lorem ipsum dolor sit</a><a href="#">Lorem ipsum</a><a href="#">Lorem ipsum dolor</a><a href="#">Lorem ipsum</a></div></nav>
+    <p class="site-footer__copy">© 2026 Feroxo Welding S.R.O. All Rights Reserved</p>
+  </footer>
+
+  <div class="modal" data-modal="request" aria-hidden="true"><div class="modal__backdrop" data-close-request></div><section class="modal__box" role="dialog" aria-modal="true" aria-labelledby="request-title"><button class="modal__close" type="button" data-close-request aria-label="Close">×</button><div class="request-modal__intro"><h2 id="request-title">MAKE<br/>REQUEST</h2><p>Tell us about your project and we will help you select the right Feroxo equipment.</p></div><form class="request-form" data-request-form action="send-request.php" method="post" enctype="multipart/form-data" novalidate><div class="request-form__grid"><input type="text" name="name" placeholder="Full Name" required/><input type="text" name="company" placeholder="Company Name"/><input type="email" name="email" placeholder="Email" required/><input type="tel" name="phone" placeholder="Phone Number"/></div><label class="request-form__equipment"><span>Selected Equipment</span><input type="text" name="equipment" placeholder="Equipment / product"/><a href="pages/products.html">Browse Equipment</a></label><textarea name="message" placeholder="Project Details"></textarea><div class="request-form__bottom"><button type="submit">Send Request</button><label class="request-form__privacy"><input type="checkbox" name="privacy" required/><span>By submitting this form you agree to our <a href="pages/privacy-policy.html">Privacy Policy</a>. We never share data with third parties.</span></label></div></form></section></div>
+  <div class="image-lightbox" data-image-lightbox aria-hidden="true"><button type="button" class="image-lightbox__close" data-lightbox-close>×</button><img alt="" data-lightbox-image/></div>
+</div>
+<script src="js/main.js"></script>
+</body>
+</html>
