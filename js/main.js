@@ -265,6 +265,32 @@ Object.assign(translations.cz, {
   'contact.feature3.text': 'Náš tým vám pomůže vybrat správný svařovací generátor nebo průmyslové energetické řešení podle požadavků projektu a provozních podmínek.'
 });
 
+
+// Home-page translation keys. The original header and modal markup did not expose
+// translation hooks, so selecting Czech changed the active menu item only.
+Object.assign(translations.en, {
+  'nav.resources': 'Resources',
+  'home.news.title': 'Latest News & Articles',
+  'request.placeholder.fullname': 'Full Name',
+  'request.placeholder.companyname': 'Company Name',
+  'request.placeholder.project': 'Project Details',
+  'request.selected': 'Selected Equipment',
+  'request.equipment.help': 'Not sure what you need yet?<br/>Browse our equipment catalog<br/>or leave this section empty',
+  'request.browse': 'Browse Equipment',
+  'request.privacy.home': 'By submitting this form you agree to our <a href="pages/privacy-policy.html">Privacy Policy</a>. We never share data with third parties.'
+});
+Object.assign(translations.cz, {
+  'nav.resources': 'Zdroje',
+  'home.news.title': 'Nejnovější zprávy a články',
+  'request.placeholder.fullname': 'Jméno a příjmení',
+  'request.placeholder.companyname': 'Název společnosti',
+  'request.placeholder.project': 'Podrobnosti projektu',
+  'request.selected': 'Vybrané vybavení',
+  'request.equipment.help': 'Nejste si jistí, co potřebujete?<br/>Projděte si náš katalog vybavení<br/>nebo tuto část nechte prázdnou',
+  'request.browse': 'Procházet vybavení',
+  'request.privacy.home': 'Odesláním formuláře souhlasíte s <a href="pages/privacy-policy.html">ochranou soukromí</a>. Vaše údaje nikdy nesdílíme s třetími stranami.'
+});
+
 const getTranslation = (key, lang = currentLanguage) => translations[lang]?.[key] ?? translations.en[key] ?? '';
 let currentLanguage = localStorage.getItem('feroxo-language') || 'en';
 
@@ -488,6 +514,80 @@ builtVideo?.addEventListener('pause', () => {
   builtVideo.controls = false;
 });
 
+// Built for Industry video: keep visitors on the site and play the local MP4
+// inside an accessible modal instead of leaving for YouTube.
+const homeVideoModal = document.querySelector('[data-modal="home-video"]');
+const homeVideoOpenButtons = document.querySelectorAll('[data-open-home-video]');
+const homeVideoCloseButtons = document.querySelectorAll('[data-close-home-video]');
+const homeVideoPlayer = document.querySelector('[data-home-video]');
+
+const openHomeVideo = async () => {
+  if (!homeVideoModal || !homeVideoPlayer) return;
+  homeVideoModal.classList.add('is-open');
+  homeVideoModal.setAttribute('aria-hidden', 'false');
+  document.body.style.overflow = 'hidden';
+  try {
+    homeVideoPlayer.currentTime = 0;
+    homeVideoPlayer.muted = false;
+    await homeVideoPlayer.play();
+  } catch (error) {
+    // Controls remain available when browser autoplay restrictions apply.
+  }
+};
+
+const closeHomeVideo = () => {
+  if (!homeVideoModal || !homeVideoPlayer) return;
+  homeVideoPlayer.pause();
+  homeVideoPlayer.currentTime = 0;
+  homeVideoModal.classList.remove('is-open');
+  homeVideoModal.setAttribute('aria-hidden', 'true');
+  document.body.style.overflow = '';
+};
+
+homeVideoOpenButtons.forEach((button) => button.addEventListener('click', openHomeVideo));
+homeVideoCloseButtons.forEach((button) => button.addEventListener('click', closeHomeVideo));
+window.addEventListener('keydown', (event) => {
+  if (event.key === 'Escape') closeHomeVideo();
+});
+
+
+// Resources article video: same on-site playback behavior as home video.
+const articleVideoModal = document.querySelector('[data-modal="article-video"]');
+const articleVideoOpenButtons = document.querySelectorAll('[data-open-article-video]');
+const articleVideoCloseButtons = document.querySelectorAll('[data-close-article-video]');
+const articleVideoPlayer = document.querySelector('[data-article-video]');
+
+const openArticleVideo = async () => {
+  if (!articleVideoModal || !articleVideoPlayer) return;
+  articleVideoModal.classList.add('is-open');
+  articleVideoModal.setAttribute('aria-hidden', 'false');
+  document.body.style.overflow = 'hidden';
+  try {
+    articleVideoPlayer.currentTime = 0;
+    articleVideoPlayer.muted = false;
+    await articleVideoPlayer.play();
+  } catch (error) {
+    // Browser may wait for an explicit play interaction; controls stay available.
+  }
+};
+
+const closeArticleVideo = () => {
+  if (!articleVideoModal || !articleVideoPlayer) return;
+  articleVideoPlayer.pause();
+  articleVideoPlayer.currentTime = 0;
+  articleVideoModal.classList.remove('is-open');
+  articleVideoModal.setAttribute('aria-hidden', 'true');
+  document.body.style.overflow = '';
+};
+
+articleVideoOpenButtons.forEach((button) => button.addEventListener('click', openArticleVideo));
+articleVideoCloseButtons.forEach((button) => button.addEventListener('click', closeArticleVideo));
+window.addEventListener('keydown', (event) => {
+  if (event.key === 'Escape') closeArticleVideo();
+});
+
+
+
 const newsTrack = document.querySelector('[data-news-track]');
 const newsPrev = document.querySelector('[data-news-prev]');
 const newsNext = document.querySelector('[data-news-next]');
@@ -692,3 +792,37 @@ window.addEventListener('keydown', (event) => {
     }));
   });
 })();
+
+
+// Product-detail video: use the local MP4 in an on-site modal, never an external YouTube URL.
+const productVideoModal = document.querySelector('[data-modal="product-video"]');
+const productVideoOpenButtons = document.querySelectorAll('[data-open-product-video]');
+const productVideoCloseButtons = document.querySelectorAll('[data-close-product-video]');
+const productVideoPlayer = document.querySelector('[data-product-video]');
+
+const openProductVideo = async () => {
+  if (!productVideoModal || !productVideoPlayer) return;
+  productVideoModal.classList.add('is-open');
+  productVideoModal.setAttribute('aria-hidden', 'false');
+  document.body.style.overflow = 'hidden';
+  try {
+    productVideoPlayer.currentTime = 0;
+    productVideoPlayer.muted = false;
+    await productVideoPlayer.play();
+  } catch (error) {
+    // A control bar remains visible if the browser delays playback.
+  }
+};
+const closeProductVideo = () => {
+  if (!productVideoModal || !productVideoPlayer) return;
+  productVideoPlayer.pause();
+  productVideoPlayer.currentTime = 0;
+  productVideoModal.classList.remove('is-open');
+  productVideoModal.setAttribute('aria-hidden', 'true');
+  document.body.style.overflow = '';
+};
+productVideoOpenButtons.forEach((button) => button.addEventListener('click', openProductVideo));
+productVideoCloseButtons.forEach((button) => button.addEventListener('click', closeProductVideo));
+window.addEventListener('keydown', (event) => {
+  if (event.key === 'Escape') closeProductVideo();
+});

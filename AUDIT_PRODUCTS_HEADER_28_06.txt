@@ -1,0 +1,16 @@
+Feroxo Products + Header fix — 28 June 2026
+
+Updated:
+- Products catalog: 11 product cards now use readable product-specific fields.
+- Category listings and related-card repeats: same product fields applied.
+- Shared inner-page header: proportional desktop geometry + centered tablet fallback;
+  logo is kept inside a non-clipping flex item.
+
+Verification follows in the release process.
+
+Checks:
+- HTML pages: 30
+- Local page/asset references checked: 1179
+- Missing local references: 0
+- Products catalog cards checked: 11
+- No empty/— product values in catalog: yes

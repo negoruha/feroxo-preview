@@ -2314,6 +2314,9 @@ body { font-family: Inter, Arial, Helvetica, sans-serif; }
 .resource-card div { padding: 25px 24px; display:flex; flex-direction:column; }
 .resource-card h2 { margin:0; text-transform:uppercase; font-size:22px; line-height:.92; letter-spacing:-.04em; }
 .resource-card p { margin:auto 0 0; font-size:12px; color:rgba(13,2,2,.58); }
+.resource-card__tags { display:flex; flex-wrap:wrap; gap:8px; margin:14px 0 10px; }
+.resource-card__tags span { display:inline-flex; align-items:center; height:24px; padding:0 10px; border-radius:999px; border:1px solid rgba(191,33,33,.35); background:rgba(191,33,33,.08); color:var(--red); font-size:10px; font-weight:500; line-height:1; white-space:nowrap; }
+
 .pagination { display:flex; justify-content:center; align-items:center; gap:8px; margin: 28px 0 44px; }
 .pagination button { width:32px; height:32px; border:1px solid var(--line); border-radius:50%; background:var(--surface); cursor:pointer; font-size:12px; }
 .pagination button.is-active { border-color:var(--red); color:#fff; background:var(--red); }
@@ -2467,6 +2470,8 @@ body { font-family: Inter, Arial, Helvetica, sans-serif; }
   .resource-card div { padding:15px; }
   .resource-card h2 { font-size:17px; }
   .resource-card p { font-size:10px; }
+  .resource-card__tags { gap:6px; margin:10px 0 8px; }
+  .resource-card__tags span { height:20px; padding:0 8px; font-size:9px; }
   .article-top { width:var(--page-width); height:62px; margin-top:10px; }
   .article-content { width:var(--page-width); margin-top:16px; }
   .article-content > h1 { font-size:clamp(36px, 10vw, 56px); }
@@ -3108,4 +3113,632 @@ body { font-family: Inter, Arial, Helvetica, sans-serif; }
   .home-page .site-footer__column h3 { font-size:13px; margin-bottom:2px; }
   .home-page .site-footer__column a { font-size:12px; }
   .home-page .site-footer__copy { left:22px; bottom:22px; font-size:10px; }
+}
+
+/* ========================================================================
+   HOME TEST PASS — corrections from live preview feedback (2026-06-28)
+   Scope: landing page only. No other route geometry is changed here.
+   ======================================================================== */
+
+/* 1. Hero photography must preserve its own proportions rather than stretching. */
+.home-page .hero__slide .hero__image {
+  object-fit: cover;
+  object-position: center 52%;
+}
+
+/* 2. Built for Industry uses the exact approved Figma outline, including
+   the rounded centre cut-out below the card. */
+.home-page .built-industry__text-panel {
+  border: 0;
+  border-radius: 0;
+  background-color: transparent;
+  background-image: url('../assets/images/home-figma/built-industry-frame.svg');
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+  background-position: center;
+  overflow: visible;
+}
+.home-page .built-industry__text-panel::after { display: none; }
+.home-page .built-industry__button { z-index: 4; }
+.home-page .built-industry__video-card {
+  padding: 0;
+  border: 0;
+  font: inherit;
+  text-align: inherit;
+}
+
+/* 3–4. Keep the footer below the complete news grid and give its columns
+   breathing room at all desktop widths. */
+.home-page main { display: block; position: relative; z-index: 1; }
+.home-page .latest-news { position: relative; z-index: 1; }
+.home-page .latest-news__grid { min-height: calc(752 / 1840 * 100cqw); }
+.home-page .site-footer {
+  clear: both;
+  z-index: 2;
+  margin-top: clamp(56px, calc(72 / 1840 * 100vw), 72px);
+}
+.home-page .site-footer__nav {
+  left: calc(620 / 1840 * 100cqw);
+  right: calc(48 / 1840 * 100cqw);
+  grid-template-columns: 1fr 1.15fr 1.15fr;
+  column-gap: calc(210 / 1840 * 100cqw);
+  justify-content: normal;
+}
+.home-page .site-footer__column {
+  min-width: 0;
+}
+.home-page .site-footer__column a,
+.home-page .site-footer__column h3 {
+  white-space: nowrap;
+}
+
+/* 6. Make Request — Figma Frame 154 outer shell plus the precise inner
+   cut-out contour. Controls remain real accessible form controls. */
+.home-page .request-modal {
+  z-index: 120;
+  padding: 16px;
+}
+.home-page .request-modal .modal__box {
+  width: min(1632px, calc(100vw - 32px), calc((100vh - 32px) * 2.4954));
+  max-width: none;
+  aspect-ratio: 1632 / 654;
+  min-height: 0;
+  max-height: none;
+  padding: calc(96 / 1632 * 100cqw);
+  display: grid;
+  grid-template-columns: minmax(0, 620fr) minmax(0, 712fr);
+  gap: calc(108 / 1632 * 100cqw);
+  align-items: start;
+  container-type: inline-size;
+  border: 0;
+  border-radius: 0;
+  background: url('../assets/images/home-figma/request-frame-shell.svg') center / 100% 100% no-repeat;
+  box-shadow: 0 30px 100px rgba(0,0,0,.34);
+  overflow: visible;
+}
+.home-page .request-modal .modal__close {
+  top: 0;
+  right: 0;
+  width: calc(50 / 1632 * 100cqw);
+  min-width: 40px;
+  height: calc(50 / 1632 * 100cqw);
+  min-height: 40px;
+  border: 1px solid #FAFAFA;
+  border-radius: 50%;
+  background: #0D0202;
+  color: #FAFAFA;
+  font-size: calc(28 / 1632 * 100cqw);
+  line-height: 1;
+  transform: translate(0, 0);
+  z-index: 8;
+}
+.home-page .request-modal .request-modal__intro {
+  align-self: start;
+}
+.home-page .request-modal .request-modal__intro h2 {
+  margin: 0;
+  font-size: calc(112 / 1632 * 100cqw);
+  line-height: .85;
+  letter-spacing: -.06em;
+}
+.home-page .request-modal .request-modal__intro p {
+  max-width: calc(610 / 1632 * 100cqw);
+  margin: calc(22 / 1632 * 100cqw) 0 0;
+  color: var(--dark);
+  font-size: calc(24 / 1632 * 100cqw);
+  line-height: 1.05;
+}
+.home-page .request-modal .request-form { display:block; }
+.home-page .request-modal .request-form__grid { gap: calc(12 / 1632 * 100cqw); }
+.home-page .request-modal .request-form input,
+.home-page .request-modal .request-form textarea {
+  min-height: calc(50 / 1632 * 100cqw);
+  padding: 0 calc(22 / 1632 * 100cqw);
+  border-color: #0D0202;
+  border-radius: 25px;
+  font-size: calc(18 / 1632 * 100cqw);
+}
+.home-page .request-modal .request-form__equipment {
+  grid-template-columns: 1fr auto;
+  min-height: calc(144 / 1632 * 100cqw);
+  margin-top: calc(14 / 1632 * 100cqw);
+  padding: calc(16 / 1632 * 100cqw) calc(16 / 1632 * 100cqw);
+  border-color: #0D0202;
+  border-radius: 14px;
+}
+.home-page .request-modal .request-form__equipment > span {
+  top: calc(-9 / 1632 * 100cqw);
+  left: calc(16 / 1632 * 100cqw);
+  padding: 0 calc(5 / 1632 * 100cqw);
+  font-size: calc(12 / 1632 * 100cqw);
+}
+.home-page .request-modal .request-form__equipment em {
+  justify-self: end;
+  margin-right: calc(10 / 1632 * 100cqw);
+  color: var(--dark);
+  font-size: calc(14 / 1632 * 100cqw);
+  line-height: .95;
+  font-style: normal;
+  text-align: left;
+}
+.home-page .request-modal .request-form__equipment a {
+  min-width: calc(223 / 1632 * 100cqw);
+  height: calc(50 / 1632 * 100cqw);
+  border-color: #0D0202;
+  border-radius: 25px;
+  color: var(--dark);
+  font-size: calc(18 / 1632 * 100cqw);
+}
+.home-page .request-modal .request-form textarea {
+  height: calc(170 / 1632 * 100cqw);
+  min-height: 0;
+  margin-top: calc(14 / 1632 * 100cqw);
+  padding-top: calc(18 / 1632 * 100cqw);
+  border-radius: 14px;
+  resize: none;
+}
+.home-page .request-modal .request-form__bottom {
+  gap: calc(24 / 1632 * 100cqw);
+  margin-top: calc(14 / 1632 * 100cqw);
+}
+.home-page .request-modal .request-form__bottom > button {
+  width: calc(183 / 1632 * 100cqw);
+  height: calc(50 / 1632 * 100cqw);
+  border-radius: 25px;
+  font-size: calc(18 / 1632 * 100cqw);
+}
+.home-page .request-modal .request-form__privacy {
+  max-width: calc(510 / 1632 * 100cqw);
+  font-size: calc(11 / 1632 * 100cqw);
+}
+.home-page .request-modal .request-form__privacy input {
+  width: calc(14 / 1632 * 100cqw);
+  min-height: calc(14 / 1632 * 100cqw);
+  padding: 0;
+}
+
+/* 7. On-site video overlay — no outbound YouTube navigation. */
+.video-modal {
+  position: fixed;
+  inset: 0;
+  z-index: 130;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  padding: 24px;
+}
+.video-modal.is-open { display:flex; }
+.video-modal__backdrop { position:absolute; inset:0; background:rgba(13,2,2,.82); }
+.video-modal__box {
+  position:relative;
+  z-index:1;
+  width:min(1120px, calc(100vw - 40px));
+  overflow:hidden;
+  border-radius:24px;
+  background:#0D0202;
+  box-shadow:0 32px 100px rgba(0,0,0,.45);
+}
+.video-modal__box video { display:block; width:100%; max-height:calc(100vh - 64px); background:#0D0202; }
+.video-modal__close {
+  position:absolute;
+  z-index:2;
+  top:12px;
+  right:12px;
+  width:44px;
+  height:44px;
+  border:1px solid #FAFAFA;
+  border-radius:50%;
+  background:rgba(13,2,2,.7);
+  color:#FAFAFA;
+  font-size:28px;
+  cursor:pointer;
+}
+
+@media (max-width: 760px) {
+  .home-page .site-footer { margin-top:42px; }
+  .home-page .site-footer__nav { position:static; display:grid; grid-template-columns:1fr; gap:24px; margin-top:28px; padding:0; }
+  .home-page .site-footer__column a,
+  .home-page .site-footer__column h3 { white-space:normal; }
+  .home-page .request-modal { padding:10px; }
+  .home-page .request-modal .modal__box {
+    width:calc(100vw - 20px);
+    aspect-ratio:auto;
+    min-height:calc(100vh - 20px);
+    max-height:calc(100vh - 20px);
+    overflow:auto;
+    display:grid;
+    grid-template-columns:1fr;
+    gap:24px;
+    padding:52px 20px 26px;
+    border-radius:18px;
+    background:#FAFAFA;
+    border:1px solid rgba(13,2,2,.24);
+  }
+  .home-page .request-modal .modal__close { top:12px; right:12px; width:40px; height:40px; font-size:24px; }
+  .home-page .request-modal .request-modal__intro h2 { font-size:52px; }
+  .home-page .request-modal .request-modal__intro p { max-width:360px; font-size:16px; }
+  .home-page .request-modal .request-form input { min-height:48px; font-size:15px; }
+  .home-page .request-modal .request-form__equipment { min-height:130px; }
+  .home-page .request-modal .request-form__equipment em { font-size:13px; }
+  .home-page .request-modal .request-form__equipment a { min-width:130px; height:44px; font-size:13px; }
+  .home-page .request-modal .request-form textarea { height:150px; font-size:15px; }
+  .home-page .request-modal .request-form__bottom { align-items:flex-start; flex-direction:column; }
+  .home-page .request-modal .request-form__bottom > button { width:180px; height:50px; font-size:16px; }
+  .home-page .request-modal .request-form__privacy { max-width:none; font-size:12px; }
+}
+
+
+/* --------------------------------------------------------------------------
+   Contact page — exact approved Figma assets and geometry
+   -------------------------------------------------------------------------- */
+/* Sprite now works for both footer buttons and the semantic links used on
+   product/resource/contact pages. */
+.site-footer__socials > a,
+.site-footer__socials > button {
+  width: calc(40 / 1840 * 100cqw);
+  min-width: 30px;
+  height: calc(40 / 1840 * 100cqw);
+  min-height: 30px;
+  display: block;
+  padding: 0;
+  border: 0;
+  border-radius: 50%;
+  background-color: transparent;
+  background-image: url('../assets/footer/social-icons.svg');
+  background-repeat: no-repeat;
+  background-size: 460% 100%;
+  cursor: pointer;
+  transition: transform .2s ease, opacity .2s ease;
+}
+.site-footer__socials > a:nth-child(1),
+.site-footer__socials > button:nth-child(1) { background-position: 0% 50%; }
+.site-footer__socials > a:nth-child(2),
+.site-footer__socials > button:nth-child(2) { background-position: 33.333% 50%; }
+.site-footer__socials > a:nth-child(3),
+.site-footer__socials > button:nth-child(3) { background-position: 66.666% 50%; }
+.site-footer__socials > a:nth-child(4),
+.site-footer__socials > button:nth-child(4) { background-position: 100% 50%; }
+.site-footer__socials > a:hover,
+.site-footer__socials > a:focus-visible,
+.site-footer__socials > button:hover,
+.site-footer__socials > button:focus-visible { transform: scale(1.08); opacity: .88; }
+
+/* Desktop - 5: 908 + 24 + 908 inside the 1840px content region. */
+.contact-layout-v2 {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 24px;
+  align-items: stretch;
+}
+.contact-info-list {
+  align-content: center;
+  min-height: 416px;
+  gap: 23px;
+}
+.contact-info-list article { grid-template-columns: 64px minmax(0, 1fr); }
+.contact-info-list .contact-icon {
+  width: 50px;
+  height: 50px;
+  display: grid;
+  place-items: center;
+  border: 1px solid rgba(13, 2, 2, .28);
+  border-radius: 50%;
+}
+.contact-info-list .contact-icon img {
+  display: block;
+  width: 30px;
+  height: 30px;
+  object-fit: contain;
+}
+.contact-info-list article:nth-child(1) .contact-icon img { width: 24px; }
+.contact-map-v2 {
+  min-height: 0;
+  aspect-ratio: 908 / 416;
+  border-radius: 24px;
+  background: #FAFAFA;
+}
+.contact-map-v2 img { object-fit: fill; }
+/* The source SVG contains the first approved Figma marker; this is the
+   second marker displayed lower on Market Street in Desktop - 5. */
+.contact-map-v2__pin { left: 50%; top: 60.5%; }
+
+/* Contact footer follows the 1840x366 Figma component rather than the
+   taller generic fallback. The logo artwork includes the tagline, so the
+   duplicated HTML text is visually hidden only on this page. */
+.contact-page + .site-footer {
+  position: relative;
+  display: block;
+  height: calc(366 / 1840 * 100cqw);
+  min-height: 230px;
+  margin: 40px auto;
+  padding: 0;
+  border-radius: 24px;
+}
+.contact-page + .site-footer .site-footer__brand {
+  position: absolute;
+  top: calc(32 / 1840 * 100cqw);
+  left: calc(32 / 1840 * 100cqw);
+  display: block;
+  width: calc(243 / 1840 * 100cqw);
+}
+.contact-page + .site-footer .site-footer__logo { width: 100%; min-width: 0; }
+.contact-page + .site-footer .site-footer__logo img { width: 100%; height: auto; }
+.contact-page + .site-footer .site-footer__tagline { display: none; }
+.contact-page + .site-footer .site-footer__socials {
+  margin-top: calc(24 / 1840 * 100cqw);
+  gap: calc(8 / 1840 * 100cqw);
+}
+.contact-page + .site-footer .site-footer__nav {
+  position: absolute;
+  top: calc(32 / 1840 * 100cqw);
+  left: calc(652 / 1840 * 100cqw);
+  display: grid;
+  grid-template-columns: repeat(3, calc(184 / 1840 * 100cqw));
+  column-gap: calc(264 / 1840 * 100cqw);
+  gap: 0;
+  padding: 0;
+}
+.contact-page + .site-footer .site-footer__column { gap: calc(8 / 1840 * 100cqw); }
+.contact-page + .site-footer .site-footer__column h3 {
+  margin: 0 0 calc(4 / 1840 * 100cqw);
+  font-size: calc(18 / 1840 * 100cqw);
+  line-height: 1;
+  font-weight: 600;
+}
+.contact-page + .site-footer .site-footer__column a {
+  color: #FAFAFA;
+  font-size: calc(18 / 1840 * 100cqw);
+  line-height: 1;
+}
+.contact-page + .site-footer .site-footer__copy {
+  left: calc(32 / 1840 * 100cqw);
+  bottom: calc(32 / 1840 * 100cqw);
+  color: #FAFAFA;
+  font-size: calc(14 / 1840 * 100cqw);
+  line-height: 1;
+}
+
+@media (max-width: 760px) {
+  .contact-layout-v2 { grid-template-columns: 1fr; gap: 24px; }
+  .contact-info-list { min-height: 0; }
+  .contact-info-list .contact-icon { width: 38px; height: 38px; }
+  .contact-info-list .contact-icon img { width: 23px; height: 23px; }
+  .contact-info-list article:nth-child(1) .contact-icon img { width: 19px; }
+  .contact-map-v2 { aspect-ratio: 908 / 416; min-height: 0; border-radius: 16px; }
+  .contact-page + .site-footer {
+    height: auto;
+    min-height: 0;
+    margin: 24px auto 20px;
+    padding: 28px 22px 66px;
+    border-radius: 16px;
+  }
+  .contact-page + .site-footer .site-footer__brand,
+  .contact-page + .site-footer .site-footer__nav { position: static; width: auto; }
+  .contact-page + .site-footer .site-footer__logo { width: 160px; }
+  .contact-page + .site-footer .site-footer__socials { margin-top: 18px; gap: 8px; }
+  .contact-page + .site-footer .site-footer__socials > a { width: 28px; height: 28px; min-width: 0; min-height: 0; }
+  .contact-page + .site-footer .site-footer__nav { grid-template-columns: 1fr 1fr; gap: 24px; margin-top: 26px; }
+  .contact-page + .site-footer .site-footer__column { gap: 7px; }
+  .contact-page + .site-footer .site-footer__column h3 { font-size: 13px; margin-bottom: 2px; }
+  .contact-page + .site-footer .site-footer__column a { font-size: 12px; }
+  .contact-page + .site-footer .site-footer__copy { left: 22px; bottom: 22px; font-size: 10px; }
+}
+
+
+/* --------------------------------------------------------------------------
+   Products pass — card copy and reliable shared inner-page header alignment
+   -------------------------------------------------------------------------- */
+/* The original Figma header is 1192px wide inside a 1840px content area.
+   Use proportional positioning on wide screens, then centre it before the
+   nav needs to compress. This prevents the logo from being cropped at
+   browser zoom levels and intermediate laptop widths. */
+.inner-top,
+.article-top,
+.detail-top {
+  overflow: visible;
+}
+.inner-top .site-header,
+.article-top .site-header,
+.detail-top .site-header {
+  overflow: visible;
+  min-width: 0;
+}
+.inner-top .site-header__logo,
+.article-top .site-header__logo,
+.detail-top .site-header__logo {
+  flex: 0 0 auto;
+  min-width: 0;
+  overflow: visible;
+}
+.inner-top .site-header__logo img,
+.article-top .site-header__logo img,
+.detail-top .site-header__logo img {
+  display: block;
+  max-width: none;
+  object-fit: contain;
+  overflow: visible;
+}
+
+@media (min-width: 1201px) {
+  .inner-top .site-header,
+  .article-top .site-header,
+  .detail-top .site-header {
+    left: calc(324 / 1840 * 100%);
+    width: calc(1192 / 1840 * 100%);
+    transform: none;
+    padding-left: 34px;
+    padding-right: 24px;
+  }
+  .inner-top .site-header__logo,
+  .article-top .site-header__logo,
+  .detail-top .site-header__logo { width: 146px; }
+  .inner-top .site-header__logo img,
+  .article-top .site-header__logo img,
+  .detail-top .site-header__logo img { width: 146px; }
+  .inner-top .site-nav,
+  .article-top .site-nav,
+  .detail-top .site-nav { gap: clamp(18px, 1.45vw, 27px); margin-left: 32px; }
+}
+
+@media (min-width: 761px) and (max-width: 1200px) {
+  .inner-top .site-header,
+  .article-top .site-header,
+  .detail-top .site-header {
+    left: 50%;
+    width: min(940px, calc(100% - 48px));
+    transform: translateX(-50%);
+    padding-left: 26px;
+    padding-right: 22px;
+  }
+  .inner-top .site-header__logo,
+  .article-top .site-header__logo,
+  .detail-top .site-header__logo { width: 118px; }
+  .inner-top .site-header__logo img,
+  .article-top .site-header__logo img,
+  .detail-top .site-header__logo img { width: 118px; }
+  .inner-top .site-nav,
+  .article-top .site-nav,
+  .detail-top .site-nav { gap: 18px; margin-left: 24px; }
+  .inner-top .site-nav__link,
+  .article-top .site-nav__link,
+  .detail-top .site-nav__link { font-size: 12px; }
+  .inner-top .site-header__actions,
+  .article-top .site-header__actions,
+  .detail-top .site-header__actions { gap: 8px; }
+}
+
+/* Product cards: all supplied products now have readable, non-empty fields. */
+.products-page .product-card__body { min-height: 238px; }
+.products-page .product-card h3 { overflow-wrap: anywhere; }
+.products-page .product-card p { min-height: 28px; }
+.products-page .product-card dl { margin-top: auto; }
+.products-page .product-card dl div {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  align-items: baseline;
+  column-gap: 12px;
+}
+.products-page .product-card dt { overflow-wrap: anywhere; font-weight: 700; }
+.products-page .product-card dd { white-space: nowrap; text-align: right; }
+
+@media (max-width: 760px) {
+  .products-page .product-card__body { min-height: 0; }
+  .products-page .product-card p { min-height: 0; }
+}
+
+/* Resources article video — play inline in site modal, never leave for YouTube. */
+.article-video__trigger { display:block; position:relative; width:100%; padding:0; border:0; background:none; cursor:pointer; border-radius:16px; overflow:hidden; }
+.article-video__trigger:focus-visible { outline:3px solid rgba(191,33,33,.7); outline-offset:4px; }
+.article-video__trigger img { display:block; width:100%; }
+.article-video__trigger span { pointer-events:none; }
+
+
+/* --------------------------------------------------------------------------
+   Product detail reference pass — Desktop - 8 / DGW300MS/UKV
+   -------------------------------------------------------------------------- */
+.detail-top {
+  display:block;
+  width:var(--page-width);
+  min-height:80px;
+  height:80px;
+  margin:40px auto 0;
+  background:var(--red);
+  border-radius:18px;
+  position:relative;
+  overflow:visible;
+}
+.detail-top::before { content:''; position:absolute; top:0; bottom:0; left:calc(324 / 1840 * 100%); right:calc(324 / 1840 * 100%); background:var(--page-bg); }
+.detail-top .site-header { z-index:2; }
+.product-detail-page { padding-top:0; }
+.product-detail-page .breadcrumb { margin: 36px 0 32px; }
+.product-detail-v2 { grid-template-columns: 816fr 656fr 320fr; gap:24px; }
+.product-gallery-v2 { position:relative; min-width:0; }
+.product-gallery-v2__main { min-height:816px; padding:32px; border-radius:18px; position:relative; }
+.product-gallery-v2__main img { max-height:720px; width:100%; object-fit:contain; }
+.product-gallery-v2__arrow { position:absolute; z-index:3; top:48%; width:50px; height:50px; border:1px solid rgba(13,2,2,.32); border-radius:50%; color:var(--dark); background:var(--surface); font-size:34px; line-height:1; display:grid; place-items:center; cursor:default; }
+.product-gallery-v2__arrow--prev { left:18px; }
+.product-gallery-v2__arrow--next { right:18px; }
+.product-gallery-v2__dots { margin-top:16px; }
+.product-gallery-v2__dots span { width:8px; height:8px; }
+.product-summary h1 { font-size:32px; line-height:1; }
+.product-summary__meta { margin:4px 0 12px; font-size:14px; }
+.product-summary > p { font-size:14px; line-height:1.22; margin:0; }
+.product-badges { margin:12px 0 14px; }
+.product-badges span { padding:4px 7px; font-size:9px; border-radius:10px; }
+.product-accordions { margin-top:0; }
+.product-accordions details { border-radius:14px; }
+.product-accordions summary { font-size:14px; padding:17px 18px; }
+.product-accordions ul { font-size:12px; line-height:1.28; padding:0 22px 16px 34px; }
+.product-side-v2 { gap:14px; padding-top:0; }
+.product-warranty { width:252px; max-width:100%; }
+.product-side-v2 > button { height:50px; font-size:13px; }
+.product-side-v2__onpage { display:grid; gap:10px; padding-top:2px; }
+.product-side-v2__eyebrow { font-size:12px; color:rgba(13,2,2,.72); }
+.product-side-v2__onpage > strong { font-size:18px; line-height:1; }
+.product-side-v2 nav { display:grid; gap:12px; border:0; border-radius:0; padding:0; background:transparent; }
+.product-side-v2 nav a { border:0; padding:0; font-size:12px; color:rgba(13,2,2,.82); }
+.product-side-v2 nav a:hover { color:var(--red); }
+.detail-section { max-width:1496px; margin-top:54px; }
+.detail-section h2, .related-section h2 { font-size:26px; margin-bottom:16px; }
+.technical-specs--figma { grid-template-columns: repeat(4,1fr); }
+.technical-specs--figma div { min-height:64px; padding:14px 16px; }
+.technical-specs--figma .technical-specs__label { background:#E7E7E7; }
+.technical-specs--figma dt, .technical-specs--figma dd { margin:0; font-size:12px; line-height:1.25; font-weight:400; }
+.technical-specs--figma .technical-specs__value dd { font-weight:500; }
+.equipment-detail__grid { gap:54px; padding-bottom:18px; }
+.equipment-detail h3 { font-size:17px; }
+.equipment-detail ul, .equipment-detail p { font-size:12px; line-height:1.3; }
+.detail-video__trigger { width:100%; padding:0; border:0; cursor:pointer; }
+.detail-video__trigger:focus-visible { outline:3px solid rgba(191,33,33,.7); outline-offset:4px; }
+.detail-video { border-radius:18px; }
+.detail-video img { aspect-ratio:1496 / 720; }
+.documents-grid { gap:16px; }
+.document-card { min-height:114px; border-radius:14px; padding:16px 20px; gap:14px; }
+.document-card:hover { transform:none; border-color:var(--line); }
+.document-card__pdf { display:block; width:29px; height:29px; object-fit:contain; }
+.document-card__text strong { font-size:13px; font-weight:500; }
+.document-card__text small { font-size:11px; margin-top:5px; }
+.document-card__actions { display:flex; align-items:center; gap:8px; }
+.document-card__open { min-width:70px; height:36px; padding:0 14px; display:inline-flex; align-items:center; justify-content:center; border:1px solid rgba(13,2,2,.55); border-radius:999px; font-size:12px; }
+.document-card__download { width:36px; height:36px; display:grid; place-items:center; border:1px solid rgba(13,2,2,.55); border-radius:50%; }
+.document-card__download img { width:18px; height:18px; }
+.related-section { max-width:1840px; margin-top:54px; }
+.product-grid--accessories { gap:16px; }
+
+@media (max-width: 1500px) {
+  .product-detail-v2 { grid-template-columns:minmax(0,1.08fr) minmax(0,.92fr) 240px; gap:22px; }
+  .product-gallery-v2__main { min-height:620px; }
+  .product-warranty { width:180px; }
+}
+@media (max-width: 1200px) {
+  .detail-top { margin-top:24px; }
+  .product-detail-v2 { grid-template-columns:1fr 1fr; }
+  .product-side-v2 { grid-column:1 / -1; display:grid; grid-template-columns:180px 1fr 1fr; gap:22px; align-items:start; }
+  .product-side-v2__onpage { grid-column:2 / -1; }
+  .product-side-v2 > button { align-self:start; }
+  .product-gallery-v2__main { min-height:520px; }
+}
+@media (max-width: 760px) {
+  .detail-top { width:min(100% - 20px, 1840px); min-height:62px; height:62px; margin-top:10px; border-radius:16px; }
+  .detail-top::before { left:10px; right:10px; }
+  .product-detail-page .breadcrumb { margin:22px 0 20px; font-size:11px; }
+  .product-detail-v2 { grid-template-columns:1fr; gap:18px; }
+  .product-gallery-v2__main { min-height:310px; padding:14px; border-radius:16px; }
+  .product-gallery-v2__main img { max-height:270px; }
+  .product-gallery-v2__arrow { width:36px; height:36px; font-size:25px; }
+  .product-gallery-v2__arrow--prev { left:10px; }
+  .product-gallery-v2__arrow--next { right:10px; }
+  .product-summary h1 { font-size:27px; }
+  .product-summary > p { font-size:13px; line-height:1.35; }
+  .product-side-v2 { display:flex; }
+  .product-warranty { width:150px; }
+  .technical-specs--figma { grid-template-columns:1fr 1fr; }
+  .technical-specs--figma div:nth-child(4n) { border-right:1px solid var(--line); }
+  .technical-specs--figma div:nth-child(2n) { border-right:0; }
+  .technical-specs--figma div:nth-last-child(-n+4) { border-bottom:1px solid var(--line); }
+  .technical-specs--figma div:nth-last-child(-n+2) { border-bottom:0; }
+  .equipment-detail__grid, .documents-grid { grid-template-columns:1fr; gap:12px; }
+  .document-card { min-height:84px; padding:12px; }
+  .document-card__open { min-width:54px; height:32px; padding:0 10px; }
+  .document-card__download { width:32px; height:32px; }
+  .detail-video img { aspect-ratio:16 / 9; }
 }
