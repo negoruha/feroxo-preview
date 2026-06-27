@@ -3742,3 +3742,127 @@ body { font-family: Inter, Arial, Helvetica, sans-serif; }
   .document-card__download { width:32px; height:32px; }
   .detail-video img { aspect-ratio:16 / 9; }
 }
+
+/* ========================================================================
+   FINAL INTEGRATED HOME FIXES — 28 June 2026
+   These rules intentionally come last so every previously approved home
+   correction is applied to the actual release package.
+   ======================================================================== */
+.home-page {
+  display: flex;
+  min-height: 100vh;
+  flex-direction: column;
+}
+.home-page > main {
+  display: block !important;
+  position: relative;
+  z-index: 1;
+  flex: 0 0 auto;
+  padding-bottom: 0 !important;
+}
+
+/* Hero: preserve the source photo proportions. There is no stretch and no
+   unused grey strip under the image. */
+.home-page .hero {
+  overflow: visible;
+  height: clamp(360px, 27.174vw, 500px);
+  min-height: 0;
+}
+.home-page .hero__media,
+.home-page .hero__track,
+.home-page .hero__slide {
+  height: 100% !important;
+  min-height: 0 !important;
+  line-height: 0;
+}
+.home-page .hero__media {
+  display: block;
+  background: #0D0202;
+  isolation: isolate;
+}
+.home-page .hero__track { align-items: stretch; }
+.home-page .hero__slide {
+  display: block;
+  overflow: hidden;
+}
+.home-page .hero__slide .hero__image {
+  display: block !important;
+  width: 100% !important;
+  height: 100% !important;
+  min-height: 100% !important;
+  max-height: none !important;
+  object-fit: cover !important;
+  object-position: center 56% !important;
+  vertical-align: top;
+  transform: none !important;
+}
+.home-page .hero__video {
+  width: 100% !important;
+  height: 100% !important;
+  object-fit: cover !important;
+  object-position: center;
+}
+
+/* The footer is always a normal flow element below the entire Latest News
+   grid; the absolute children inside it still use the footer as their scope. */
+.home-page .latest-news {
+  display: block;
+  position: relative;
+  z-index: 1;
+  margin-bottom: 0;
+}
+.home-page .latest-news__grid {
+  display: grid;
+  height: clamp(420px, 40.87vw, 752px) !important;
+  min-height: 420px !important;
+  overflow: visible;
+}
+.home-page .site-footer {
+  position: relative !important;
+  inset: auto !important;
+  float: none !important;
+  clear: both !important;
+  display: block !important;
+  flex: 0 0 auto;
+  height: clamp(240px, 19.89vw, 366px) !important;
+  min-height: 240px !important;
+  margin: clamp(64px, 4.35vw, 80px) auto 40px !important;
+  transform: none !important;
+  z-index: 1 !important;
+  isolation: isolate;
+}
+.home-page .site-footer__nav {
+  grid-template-columns: minmax(120px, 1fr) minmax(150px, 1.2fr) minmax(150px, 1.2fr);
+  column-gap: clamp(48px, 8vw, 150px);
+}
+
+/* Local in-page video modal — all home video triggers are buttons and are
+   never allowed to open YouTube or another tab. */
+.home-page .built-industry__video-card {
+  cursor: pointer;
+  appearance: none;
+}
+.home-page .video-modal {
+  z-index: 9999;
+}
+
+/* Clearly visible language-state feedback. */
+.language__menu button.is-active {
+  background: rgba(191,33,33,.12);
+  color: var(--red);
+}
+
+@media (max-width: 760px) {
+  .home-page .hero {
+    height: clamp(260px, 68vw, 360px);
+  }
+  .home-page .latest-news__grid {
+    height: auto !important;
+    min-height: 0 !important;
+  }
+  .home-page .site-footer {
+    height: auto !important;
+    min-height: 0 !important;
+    margin: 42px auto 20px !important;
+  }
+}
