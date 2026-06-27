@@ -3866,3 +3866,247 @@ body { font-family: Inter, Arial, Helvetica, sans-serif; }
     margin: 42px auto 20px !important;
   }
 }
+
+
+/* ========================================================================
+   FINAL VISUAL POLISH — approved review corrections
+   ======================================================================== */
+
+/* Never allow a wide child to create a horizontal page scroll that clips the
+   left side of the global header. */
+html, body { max-width: 100%; overflow-x: clip; }
+.page { max-width: 100%; }
+
+/* Shared header: retain the approved white cut-out on large desktop, and
+   switch to a safe full-width cut-out before navigation can crop. */
+.site-header {
+  box-sizing: border-box;
+  min-width: 0;
+  overflow: visible;
+  background: var(--page-bg);
+}
+.site-header__logo {
+  width: 146px;
+  min-width: 0;
+  overflow: visible;
+}
+.site-header__logo img {
+  width: 100%;
+  max-width: 146px;
+  min-width: 0;
+  height: auto;
+}
+.site-nav, .site-header__actions { min-width: 0; }
+
+@media (max-width: 1500px) and (min-width: 761px) {
+  .inner-top .site-header,
+  .article-top .site-header,
+  .detail-top .site-header {
+    left: 24px !important;
+    width: calc(100% - 48px) !important;
+    transform: none !important;
+    padding-left: 26px;
+    padding-right: 22px;
+  }
+  .inner-top .site-header__logo,
+  .article-top .site-header__logo,
+  .detail-top .site-header__logo { width: 132px; }
+  .inner-top .site-header__logo img,
+  .article-top .site-header__logo img,
+  .detail-top .site-header__logo img { width: 132px; max-width: 132px; }
+  .inner-top .site-nav,
+  .article-top .site-nav,
+  .detail-top .site-nav { gap: clamp(16px, 1.7vw, 27px); margin-left: clamp(22px, 2.2vw, 40px); }
+  .inner-top .site-nav__link,
+  .article-top .site-nav__link,
+  .detail-top .site-nav__link { font-size: 13px; }
+}
+@media (max-width: 1040px) and (min-width: 761px) {
+  .inner-top .site-header,
+  .article-top .site-header,
+  .detail-top .site-header { height: 70px; }
+  .inner-top .site-header__logo,
+  .article-top .site-header__logo,
+  .detail-top .site-header__logo { width: 118px; }
+  .inner-top .site-header__logo img,
+  .article-top .site-header__logo img,
+  .detail-top .site-header__logo img { width: 118px; max-width: 118px; }
+  .inner-top .site-nav,
+  .article-top .site-nav,
+  .detail-top .site-nav { gap: 14px; margin-left: 20px; }
+  .inner-top .site-nav__link,
+  .article-top .site-nav__link,
+  .detail-top .site-nav__link { font-size: 12px; }
+  .inner-top .language__button,
+  .article-top .language__button,
+  .detail-top .language__button { width: 34px; height: 34px; }
+  .inner-top .request-button,
+  .article-top .request-button,
+  .detail-top .request-button { width: 132px; height: 36px; font-size: 12px; }
+}
+
+/* Footer: exact functional reconstruction of Component 10. The SVG itself
+   already includes the tagline, so the duplicate HTML tagline must not render. */
+.site-footer {
+  container-type: inline-size;
+  position: relative !important;
+  clear: both;
+  float: none !important;
+  inset: auto !important;
+  display: block !important;
+  width: var(--page-width) !important;
+  height: clamp(230px, calc(366 / 1840 * 100vw), 366px) !important;
+  min-height: 0 !important;
+  margin: clamp(56px, calc(80 / 1840 * 100vw), 80px) auto 40px !important;
+  padding: 0 !important;
+  border-radius: 24px !important;
+  background: var(--red) !important;
+  color: #FAFAFA;
+  overflow: hidden !important;
+  isolation: isolate;
+  transform: none !important;
+}
+.site-footer__brand {
+  position: absolute !important;
+  top: calc(32 / 1840 * 100cqw) !important;
+  left: calc(32 / 1840 * 100cqw) !important;
+  width: calc(243 / 1840 * 100cqw) !important;
+  display: block !important;
+}
+.site-footer__logo { width: 100% !important; min-width: 0 !important; }
+.site-footer__logo img { display:block; width:100% !important; height:auto; }
+.site-footer__brand > p,
+.site-footer__tagline { display: none !important; }
+.site-footer__socials { margin-top: calc(24 / 1840 * 100cqw) !important; gap: calc(8 / 1840 * 100cqw) !important; }
+.site-footer__socials > a,
+.site-footer__socials > button {
+  width: calc(40 / 1840 * 100cqw) !important;
+  height: calc(40 / 1840 * 100cqw) !important;
+  min-width: 20px !important;
+  min-height: 20px !important;
+}
+.site-footer__nav {
+  position: absolute !important;
+  top: calc(32 / 1840 * 100cqw) !important;
+  left: calc(652 / 1840 * 100cqw) !important;
+  right: auto !important;
+  display: grid !important;
+  grid-template-columns: repeat(3, calc(184 / 1840 * 100cqw)) !important;
+  column-gap: calc(264 / 1840 * 100cqw) !important;
+  gap: 0 !important;
+  padding: 0 !important;
+}
+.site-footer__column { gap: calc(8 / 1840 * 100cqw) !important; min-width: 0; }
+.site-footer__column h3 { margin:0 0 calc(4 / 1840 * 100cqw) !important; font-size:calc(18 / 1840 * 100cqw) !important; line-height:1 !important; font-weight:600 !important; }
+.site-footer__column a { color:#FAFAFA !important; font-size:calc(18 / 1840 * 100cqw) !important; line-height:1 !important; }
+.site-footer__copy { left:calc(32 / 1840 * 100cqw) !important; bottom:calc(32 / 1840 * 100cqw) !important; color:#FAFAFA !important; font-size:calc(14 / 1840 * 100cqw) !important; line-height:1 !important; }
+
+/* The home footer follows a real spacer after the complete 2-column news grid,
+   preventing it from ever sitting over a news card. */
+.home-page .latest-news {
+  position: relative;
+  z-index: 1;
+  padding-bottom: clamp(64px, calc(80 / 1840 * 100vw), 80px) !important;
+  margin-bottom: 0 !important;
+}
+.home-page .latest-news__grid {
+  position: relative;
+  display: grid;
+  height: clamp(420px, calc(752 / 1840 * 100vw), 752px) !important;
+  min-height: 420px !important;
+  overflow: hidden;
+}
+.home-page .site-footer {
+  position: relative !important;
+  z-index: 1 !important;
+  margin-top: 0 !important;
+}
+
+/* Resources card category labels: the approved two independent 25px pills,
+   rather than a nested card layout inheriting large padding/flex rules. */
+.resource-card > a > div { padding: 25px 24px; display:flex; flex-direction:column; min-width:0; }
+.resource-card__tags {
+  display: grid !important;
+  grid-template-columns: 1fr !important;
+  width: 100% !important;
+  min-height: 0 !important;
+  margin: 12px 0 10px !important;
+  padding: 0 !important;
+  gap: 8px !important;
+  flex: 0 0 auto !important;
+  background: transparent !important;
+}
+.resource-card__tags span {
+  display: flex !important;
+  align-items: center !important;
+  width: 100% !important;
+  height: 25px !important;
+  min-height: 25px !important;
+  margin: 0 !important;
+  padding: 0 10px !important;
+  border: 1px solid rgba(191,33,33,.36) !important;
+  border-radius: 13px !important;
+  background: rgba(191,33,33,.055) !important;
+  color: var(--red) !important;
+  font-size: 10px !important;
+  font-weight: 400 !important;
+  line-height: 1 !important;
+  white-space: nowrap !important;
+}
+.resource-card__tags + p { margin-top: auto !important; }
+
+/* Contact: constrain the SVG map to its actual card at every viewport width. */
+.contact-layout-v2,
+.contact-map-v2 { min-width: 0 !important; max-width: 100% !important; }
+.contact-map-v2 {
+  width: 100% !important;
+  aspect-ratio: 908 / 416 !important;
+  overflow: hidden !important;
+  contain: paint;
+}
+.contact-map-v2 img {
+  display: block !important;
+  width: 100% !important;
+  max-width: 100% !important;
+  height: 100% !important;
+  object-fit: fill !important;
+}
+
+/* DGW300MS/UKV: use the approved real certification strip instead of text
+   substitutes. */
+.product-certification-strip {
+  display: block;
+  width: 100%;
+  max-width: 392px;
+  height: auto;
+  margin: 10px 0 12px;
+  object-fit: contain;
+  object-position: left center;
+}
+.product-certification-strip + .product-badges--fallback { display: none !important; }
+
+@media (max-width: 760px) {
+  .site-footer {
+    height: auto !important;
+    min-height: 0 !important;
+    margin: 42px auto 20px !important;
+    padding: 28px 22px 66px !important;
+    border-radius: 16px !important;
+  }
+  .site-footer__brand,
+  .site-footer__nav { position: static !important; width: auto !important; }
+  .site-footer__logo { width: 160px !important; }
+  .site-footer__socials { margin-top: 18px !important; gap: 8px !important; }
+  .site-footer__socials > a,
+  .site-footer__socials > button { width:28px !important; height:28px !important; min-width:0 !important; min-height:0 !important; }
+  .site-footer__nav { grid-template-columns: 1fr 1fr !important; gap: 24px !important; margin-top: 26px !important; }
+  .site-footer__column { gap: 7px !important; }
+  .site-footer__column h3 { font-size:13px !important; margin-bottom:2px !important; }
+  .site-footer__column a { font-size:12px !important; white-space:normal !important; }
+  .site-footer__copy { left:22px !important; bottom:22px !important; font-size:10px !important; }
+  .home-page .latest-news { padding-bottom:42px !important; }
+  .home-page .latest-news__grid { height:auto !important; min-height:0 !important; overflow:visible; }
+  .resource-card > a > div { padding:15px !important; }
+  .resource-card__tags { margin:8px 0 7px !important; gap:5px !important; }
+  .resource-card__tags span { height:20px !important; min-height:20px !important; padding:0 8px !important; font-size:9px !important; }
+}
