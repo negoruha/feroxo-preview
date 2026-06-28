@@ -1,0 +1,97 @@
+{
+  "product_pages": 11,
+  "all_gray_table_pairs": [
+    {
+      "page": "bohler-fox-a7-a.html",
+      "table": true,
+      "cells": 24,
+      "labels": 12,
+      "values": 12,
+      "alternating": true
+    },
+    {
+      "page": "cable-kg-125-20m.html",
+      "table": true,
+      "cells": 24,
+      "labels": 12,
+      "values": 12,
+      "alternating": true
+    },
+    {
+      "page": "cable-kg-135-25m.html",
+      "table": true,
+      "cells": 24,
+      "labels": 12,
+      "values": 12,
+      "alternating": true
+    },
+    {
+      "page": "dg15bmk-ukv.html",
+      "table": true,
+      "cells": 24,
+      "labels": 12,
+      "values": 12,
+      "alternating": true
+    },
+    {
+      "page": "dgw200ms-ukv.html",
+      "table": true,
+      "cells": 24,
+      "labels": 12,
+      "values": 12,
+      "alternating": true
+    },
+    {
+      "page": "dgw300ms-ukv.html",
+      "table": true,
+      "cells": 28,
+      "labels": 14,
+      "values": 14,
+      "alternating": true
+    },
+    {
+      "page": "dgw320m-i-ukv.html",
+      "table": true,
+      "cells": 24,
+      "labels": 12,
+      "values": 12,
+      "alternating": true
+    },
+    {
+      "page": "dgw400dml-ukv.html",
+      "table": true,
+      "cells": 24,
+      "labels": 12,
+      "values": 12,
+      "alternating": true
+    },
+    {
+      "page": "egw165m-i-ukv.html",
+      "table": true,
+      "cells": 24,
+      "labels": 12,
+      "values": 12,
+      "alternating": true
+    },
+    {
+      "page": "rcb-400-em.html",
+      "table": true,
+      "cells": 24,
+      "labels": 12,
+      "values": 12,
+      "alternating": true
+    },
+    {
+      "page": "trailer-2kl.html",
+      "table": true,
+      "cells": 24,
+      "labels": 12,
+      "values": 12,
+      "alternating": true
+    }
+  ],
+  "js_errors": [],
+  "php_errors": [],
+  "zip_entries": 140,
+  "sha256": "6245044c30b0bec5e2a6c2322b4a91d992142cea34d425f15a4f0b5e4fca41ad"
+}

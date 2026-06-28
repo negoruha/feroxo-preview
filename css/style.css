@@ -4076,10 +4076,10 @@ html, body { max-width: 100%; overflow-x: clip; }
    substitutes. */
 .product-certification-strip {
   display: block;
-  width: 100%;
-  max-width: 392px;
+  width: min(100%, 430px);
+  max-width: 100%;
   height: auto;
-  margin: 10px 0 12px;
+  margin: 12px 0 14px;
   object-fit: contain;
   object-position: left center;
 }
@@ -4109,4 +4109,64 @@ html, body { max-width: 100%; overflow-x: clip; }
   .resource-card > a > div { padding:15px !important; }
   .resource-card__tags { margin:8px 0 7px !important; gap:5px !important; }
   .resource-card__tags span { height:20px !important; min-height:20px !important; padding:0 8px !important; font-size:9px !important; }
+}
+
+
+/* HOME FOOTER — final spacing pass.
+   Keep the approved Component 10 positions, but give the three text columns
+   enough horizontal air so long placeholder lines never visually merge. */
+@media (min-width: 761px) {
+  .home-page .site-footer__nav {
+    grid-template-columns:
+      calc(160 / 1840 * 100cqw)
+      calc(220 / 1840 * 100cqw)
+      calc(220 / 1840 * 100cqw) !important;
+    column-gap: calc(190 / 1840 * 100cqw) !important;
+    align-items: start;
+  }
+  .home-page .site-footer__column {
+    min-width: 0;
+  }
+  .home-page .site-footer__column a,
+  .home-page .site-footer__column h3 {
+    overflow-wrap: anywhere;
+  }
+}
+
+
+/* Technical specification table — Figma alternating label cells */
+.technical-specs.technical-specs--figma {
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  border-color: #D9D9D9;
+  border-radius: 14px;
+}
+.technical-specs.technical-specs--figma > div {
+  min-height: 64px;
+  padding: 14px 16px;
+  border-color: #D9D9D9;
+  display: flex;
+  align-items: center;
+  box-sizing: border-box;
+}
+.technical-specs.technical-specs--figma > .technical-specs__label {
+  background: #E7E7E7;
+}
+.technical-specs.technical-specs--figma > .technical-specs__value {
+  background: #FAFAFA;
+}
+.technical-specs.technical-specs--figma dt,
+.technical-specs.technical-specs--figma dd {
+  margin: 0;
+  font-size: 12px;
+  line-height: 1.25;
+  font-weight: 400;
+}
+.technical-specs.technical-specs--figma dd {
+  color: var(--dark);
+}
+@media (max-width: 1100px) {
+  .technical-specs.technical-specs--figma { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}
+@media (max-width: 760px) {
+  .technical-specs.technical-specs--figma > div { min-height: 62px; padding: 12px; }
 }
