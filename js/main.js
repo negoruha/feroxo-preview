@@ -291,6 +291,111 @@ Object.assign(translations.cz, {
   'request.privacy.home': 'Odesláním formuláře souhlasíte s <a href="pages/privacy-policy.html">ochranou soukromí</a>.<br/>Vaše údaje nikdy nesdílíme s třetími stranami.'
 });
 
+
+// Shared static UI on inner pages originally shipped without data-i18n hooks.
+// This lightweight fallback translates only leaf labels and placeholders, while
+// preserving product names, values and any intentional placeholder copy.
+const looseTextTranslations = {
+  cz: {
+    'About Us': 'O nás',
+    'Products': 'Produkty',
+    'Service': 'Servis',
+    'Resources': 'Zdroje',
+    'Contact': 'Kontakt',
+    'Company': 'Společnost',
+    'Make Request': 'Odeslat poptávku',
+    'Add Request': 'Přidat do poptávky',
+    'Add to Request': 'Přidat do poptávky',
+    'Browse Equipment': 'Procházet vybavení',
+    'Selected Equipment': 'Vybrané vybavení',
+    'On this page': 'Na této stránce',
+    'Technical Specifications': 'Technické specifikace',
+    'Technical Specification': 'Technická specifikace',
+    'Equipment': 'Vybavení',
+    'Video': 'Video',
+    'Documents': 'Dokumenty',
+    'Related Accessories': 'Související příslušenství',
+    'Key Specifications': 'Klíčové specifikace',
+    'KEY SPECIFICATIONS': 'KLÍČOVÉ SPECIFIKACE',
+    'Performance & Benefits': 'Výkon a výhody',
+    'PERFORMANCE & BENEFITS': 'VÝKON A VÝHODY',
+    'Typical Applications': 'Typické použití',
+    'TYPICAL APPLICATIONS': 'TYPICKÉ POUŽITÍ',
+    'Key Features': 'Klíčové vlastnosti',
+    'KEY FEATURES': 'KLÍČOVÉ VLASTNOSTI',
+    'Why Choose This Model': 'Proč zvolit tento model',
+    'WHY CHOOSE THIS MODEL': 'PROČ ZVOLIT TENTO MODEL',
+    'Welding Cable Set': 'Svařovací kabelová sada',
+    'Remote Control Unit': 'Dálková řídicí jednotka',
+    'Customization': 'Přizpůsobení',
+    'Open': 'Otevřít',
+    'Instructions for exposure': 'Návod k použití',
+    'Operator manual': 'Návod k obsluze',
+    'Technical passport': 'Technický pas',
+    'Spare parts catalogue': 'Katalog náhradních dílů',
+    'Wiring diagram': 'Schéma zapojení',
+    'Maintenance guide': 'Průvodce údržbou',
+    'Diesel Welder': 'Dieselová svářečka',
+    'Diesel Generator': 'Dieselový generátor',
+    'Welding Generator': 'Svařovací generátor',
+    'Related Products': 'Související produkty',
+    'Diesel Generators': 'Dieselové generátory',
+    'Diesel Welders': 'Dieselové svářečky',
+    'Trailers': 'Přívěsy',
+    'Latest News & Articles': 'Nejnovější zprávy a články',
+    'See All': 'Zobrazit vše',
+    'Send Request': 'Odeslat poptávku',
+    'Full Name': 'Jméno a příjmení',
+    'Company Name': 'Název společnosti',
+    'Phone Number': 'Telefonní číslo',
+    'Project Details': 'Podrobnosti projektu',
+    'Not sure what you need yet?': 'Nejste si jistí, co potřebujete?',
+    'Privacy Policy': 'Zásady ochrany osobních údajů',
+    'Business Hours': 'Pracovní doba',
+    'Address': 'Adresa',
+    'Phone': 'Telefon',
+    'Email': 'E-mail'
+  }
+};
+
+const loosePlaceholderTranslations = {
+  cz: {
+    'Full Name': 'Jméno a příjmení',
+    'Name': 'Jméno',
+    'Company Name': 'Název společnosti',
+    'Company': 'Společnost',
+    'Email': 'E-mail',
+    'Phone': 'Telefon',
+    'Phone Number': 'Telefonní číslo',
+    'Equipment / product': 'Zařízení / produkt',
+    'Project Details': 'Podrobnosti projektu',
+    'Message': 'Zpráva'
+  }
+};
+
+const applyLooseTranslations = (lang) => {
+  const dictionary = looseTextTranslations[lang] || {};
+  const placeholders = loosePlaceholderTranslations[lang] || {};
+  const ignored = 'script,style,svg,path,defs,template,option';
+
+  document.querySelectorAll('body *').forEach((node) => {
+    if (node.matches(ignored) || node.children.length > 0 || node.closest('[data-i18n],[data-i18n-html]')) return;
+    const current = node.textContent.replace(/\s+/g, ' ').trim();
+    if (!current) return;
+    const original = node.dataset.i18nLooseOriginal || current;
+    if (!node.dataset.i18nLooseOriginal) node.dataset.i18nLooseOriginal = original;
+    const translated = dictionary[original] || original;
+    if (current !== translated) node.textContent = translated;
+  });
+
+  document.querySelectorAll('input[placeholder],textarea[placeholder]').forEach((node) => {
+    const original = node.dataset.i18nLoosePlaceholder || node.getAttribute('placeholder') || '';
+    if (!original) return;
+    if (!node.dataset.i18nLoosePlaceholder) node.dataset.i18nLoosePlaceholder = original;
+    node.setAttribute('placeholder', placeholders[original] || original);
+  });
+};
+
 const getTranslation = (key, lang = currentLanguage) => translations[lang]?.[key] ?? translations.en[key] ?? '';
 let currentLanguage = localStorage.getItem('feroxo-language') || 'en';
 
@@ -322,6 +427,8 @@ const applyTranslations = (lang) => {
   document.querySelectorAll('[data-lang-option]').forEach((button) => {
     button.classList.toggle('is-active', button.dataset.langOption === currentLanguage);
   });
+
+  applyLooseTranslations(currentLanguage);
 };
 
 const modal = document.querySelector('[data-modal="request"]');

@@ -4699,3 +4699,213 @@ html, body { max-width: 100%; overflow-x: clip; }
   .product-detail-page .detail-section { margin-top: 36px; }
   .product-detail-page .document-card { min-height: 76px; padding: 12px; }
 }
+
+/* ========================================================================
+   FINAL FOUR-CORRECTION PASS — approved image assets, text metrics and form
+   ======================================================================== */
+
+/* Built for Industry: supplied Figma inspector specifies Inter Regular 24px,
+   100% line-height. The earlier bold testing rule is intentionally reset. */
+.home-page .built-industry__content p {
+  font-family: Inter, Arial, Helvetica, sans-serif;
+  font-size: calc(24 / 1840 * 100cqw);
+  font-weight: 400;
+  line-height: 1;
+  letter-spacing: 0;
+}
+
+/* DGW300MS/UKV uses the freshly supplied raster exports. Keep both images at
+   their native Figma proportions and avoid a CSS crop at every viewport. */
+.product-detail-page .product-certification-strip {
+  width: min(100%, 536px);
+  max-width: 536px;
+  height: auto;
+  aspect-ratio: 656 / 40;
+  margin: 14px 0 16px;
+  object-fit: contain;
+  object-position: left center;
+}
+.product-detail-page .product-warranty {
+  width: 252px;
+  height: 252px;
+  max-width: 100%;
+  margin: 0 auto 14px;
+  object-fit: contain;
+  object-position: center;
+}
+
+/* Match the Desktop-8 relationship: title/meta/body and badges should not be
+   compressed by inherited global line-height rules. */
+.product-detail-page .product-summary h1 {
+  font-family: Inter, Arial, Helvetica, sans-serif;
+  font-weight: 700;
+  line-height: 1;
+  letter-spacing: 0;
+}
+.product-detail-page .product-summary__meta,
+.product-detail-page .product-summary__description,
+.product-detail-page .product-accordions summary,
+.product-detail-page .product-accordions li,
+.product-detail-page .product-side-v2__eyebrow,
+.product-detail-page .product-side-v2 strong,
+.product-detail-page .product-side-v2 a,
+.product-detail-page .detail-section h2,
+.product-detail-page .equipment-detail h3,
+.product-detail-page .equipment-detail li,
+.product-detail-page .equipment-detail p,
+.product-detail-page .document-card,
+.product-detail-page .related-section .product-card {
+  font-family: Inter, Arial, Helvetica, sans-serif;
+  letter-spacing: 0;
+}
+
+/* Request modal is the same approved Frame 154 on home and inner routes.
+   The outer SVG contour is retained, while all fields remain real controls. */
+.request-modal .modal__box {
+  width: min(1632px, calc(100vw - 32px), calc((100vh - 32px) * 2.4954));
+  max-width: none;
+  aspect-ratio: 1632 / 654;
+  min-height: 0;
+  max-height: none;
+  padding: calc(96 / 1632 * 100cqw);
+  display: grid;
+  grid-template-columns: minmax(0, 620fr) minmax(0, 712fr);
+  gap: calc(108 / 1632 * 100cqw);
+  align-items: start;
+  container-type: inline-size;
+  border: 0;
+  border-radius: 0;
+  background: url('../assets/images/home-figma/request-frame-shell.svg') center / 100% 100% no-repeat;
+  box-shadow: 0 30px 100px rgba(0,0,0,.34);
+  overflow: visible;
+}
+.request-modal .modal__close {
+  top: 0;
+  right: 0;
+  width: calc(50 / 1632 * 100cqw);
+  min-width: 40px;
+  height: calc(50 / 1632 * 100cqw);
+  min-height: 40px;
+  border: 1px solid #FAFAFA;
+  border-radius: 50%;
+  background: #0D0202;
+  color: #FAFAFA;
+  font-size: calc(28 / 1632 * 100cqw);
+  line-height: 1;
+  z-index: 8;
+}
+.request-modal .request-modal__intro h2 {
+  margin: 0;
+  font-family: Inter, Arial, Helvetica, sans-serif;
+  font-size: calc(112 / 1632 * 100cqw);
+  font-weight: 700;
+  line-height: .85;
+  letter-spacing: 0;
+}
+.request-modal .request-modal__intro p {
+  max-width: calc(620 / 1632 * 100cqw);
+  margin: calc(22 / 1632 * 100cqw) 0 0;
+  font-family: Inter, Arial, Helvetica, sans-serif;
+  font-size: calc(24 / 1632 * 100cqw);
+  font-weight: 400;
+  line-height: 1;
+  letter-spacing: 0;
+}
+.request-modal .request-form {
+  display: block;
+  min-width: 0;
+}
+.request-modal .request-form__grid { gap: calc(16 / 1632 * 100cqw); }
+.request-modal .request-form input,
+.request-modal .request-form textarea {
+  min-height: calc(50 / 1632 * 100cqw);
+  padding: 0 calc(22 / 1632 * 100cqw);
+  border-color: #0D0202;
+  border-radius: 25px;
+  font-size: calc(14 / 1632 * 100cqw);
+  font-weight: 400;
+  line-height: 1;
+  letter-spacing: 0;
+}
+.request-modal .request-form__equipment {
+  min-height: calc(144 / 1632 * 100cqw);
+  margin-top: calc(14 / 1632 * 100cqw);
+  padding: calc(16 / 1632 * 100cqw);
+  border-color: #0D0202;
+  border-radius: 14px;
+}
+.request-modal .request-form__equipment > span,
+.request-modal .request-form__equipment em,
+.request-modal .request-form__equipment a,
+.request-modal .request-form__bottom > button,
+.request-modal .request-form__privacy {
+  font-family: Inter, Arial, Helvetica, sans-serif;
+  font-size: calc(14 / 1632 * 100cqw);
+  font-weight: 400;
+  line-height: 1;
+  letter-spacing: 0;
+}
+.request-modal .request-form__equipment > span { background: #FAFAFA; }
+.request-modal .request-form__equipment a {
+  min-width: calc(223 / 1632 * 100cqw);
+  height: calc(50 / 1632 * 100cqw);
+  border-color: #0D0202;
+  border-radius: 25px;
+  color: #0D0202;
+}
+.request-modal .request-form textarea {
+  height: calc(170 / 1632 * 100cqw);
+  min-height: 0;
+  margin-top: calc(14 / 1632 * 100cqw);
+  padding-top: calc(18 / 1632 * 100cqw);
+  border-radius: 14px;
+  resize: none;
+}
+.request-modal .request-form__bottom {
+  position: absolute;
+  left: calc(112 / 1632 * 100cqw);
+  bottom: calc(80 / 1632 * 100cqw);
+  margin: 0;
+  gap: calc(48 / 1632 * 100cqw);
+  align-items: center;
+}
+.request-modal .request-form__bottom > button {
+  width: calc(183 / 1632 * 100cqw);
+  height: calc(50 / 1632 * 100cqw);
+  border-radius: 25px;
+}
+.request-modal .request-form__privacy {
+  max-width: calc(420 / 1632 * 100cqw);
+  color: #0D0202;
+}
+.request-modal .request-form__privacy input { display: none; }
+.request-modal .request-form__privacy a { color: #0D0202; text-decoration: none; }
+
+@media (max-width: 760px) {
+  .home-page .built-industry__content p { font-size: 16px; line-height: 1.1; }
+  .request-modal { padding: 10px; }
+  .request-modal .modal__box {
+    width: calc(100vw - 20px);
+    aspect-ratio: auto;
+    min-height: calc(100vh - 20px);
+    max-height: calc(100vh - 20px);
+    overflow: auto;
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 24px;
+    padding: 52px 20px 26px;
+    border-radius: 18px;
+    background: #FAFAFA;
+    border: 1px solid rgba(13,2,2,.24);
+  }
+  .request-modal .modal__close { top: 12px; right: 12px; width: 40px; height: 40px; font-size: 24px; }
+  .request-modal .request-modal__intro h2 { font-size: 52px; }
+  .request-modal .request-modal__intro p { max-width: 360px; font-size: 16px; line-height: 1.05; }
+  .request-modal .request-form input { min-height: 48px; font-size: 15px; }
+  .request-modal .request-form__equipment { min-height: 130px; }
+  .request-modal .request-form__equipment a { min-width: 130px; height: 44px; font-size: 13px; }
+  .request-modal .request-form textarea { height: 150px; font-size: 15px; }
+  .request-modal .request-form__bottom { position: static; margin-top: 14px; gap: 12px; align-items: flex-start; flex-direction: column; }
+  .request-modal .request-form__bottom > button { width: 180px; height: 50px; font-size: 16px; }
+  .request-modal .request-form__privacy { max-width: none; font-size: 12px; }
+}
