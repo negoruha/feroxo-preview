@@ -4876,6 +4876,7 @@ html, body { max-width: 100%; overflow-x: clip; }
 }
 .request-modal .request-form__privacy {
   max-width: calc(420 / 1632 * 100cqw);
+  margin-left: calc(12 / 1632 * 100cqw);
   color: #0D0202;
 }
 .request-modal .request-form__privacy input { display: none; }
@@ -4908,4 +4909,76 @@ html, body { max-width: 100%; overflow-x: clip; }
   .request-modal .request-form__bottom { position: static; margin-top: 14px; gap: 12px; align-items: flex-start; flex-direction: column; }
   .request-modal .request-form__bottom > button { width: 180px; height: 50px; font-size: 16px; }
   .request-modal .request-form__privacy { max-width: none; font-size: 12px; }
+}
+
+/* Make Request selected equipment alignment: centre help text and Browse Equipment button */
+.request-modal .request-form__equipment {
+  display: grid !important;
+  grid-template-columns: 1fr auto 1fr !important;
+  align-items: center !important;
+  column-gap: calc(28 / 1632 * 100cqw) !important;
+}
+.request-modal .request-form__equipment > span {
+  position: absolute !important;
+  top: -0.62em !important;
+  left: calc(32 / 1632 * 100cqw) !important;
+  padding: 0 6px !important;
+}
+.request-modal .request-form__equipment em {
+  grid-column: 2 !important;
+  justify-self: end !important;
+  align-self: center !important;
+  margin: 0 !important;
+  text-align: center !important;
+}
+.request-modal .request-form__equipment a {
+  grid-column: 3 !important;
+  justify-self: start !important;
+  align-self: center !important;
+  margin: 0 !important;
+}
+@media (max-width: 760px) {
+  .request-modal .request-form__equipment {
+    grid-template-columns: 1fr !important;
+    row-gap: 12px !important;
+    justify-items: center !important;
+  }
+  .request-modal .request-form__equipment em,
+  .request-modal .request-form__equipment a {
+    grid-column: 1 !important;
+    justify-self: center !important;
+  }
+}
+
+/* Product detail final approved image assets: unique filenames to bypass browser cache */
+.product-summary .product-certification-strip {
+  display: block !important;
+  width: min(100%, 656px) !important;
+  max-width: 656px !important;
+  height: auto !important;
+  aspect-ratio: 656 / 40 !important;
+  margin: 14px 0 18px !important;
+  object-fit: contain !important;
+  object-position: left center !important;
+}
+.product-side-v2 .product-warranty {
+  display: block !important;
+  width: clamp(180px, 13.7vw, 252px) !important;
+  height: auto !important;
+  aspect-ratio: 1 / 1 !important;
+  max-width: 252px !important;
+  margin: 0 auto 18px !important;
+  object-fit: contain !important;
+  object-position: center !important;
+}
+@media (max-width: 760px) {
+  .product-summary .product-certification-strip {
+    width: 100% !important;
+    max-width: 656px !important;
+    margin: 12px 0 16px !important;
+  }
+  .product-side-v2 .product-warranty {
+    width: 160px !important;
+    margin: 0 auto 16px !important;
+  }
 }

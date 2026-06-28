@@ -8,7 +8,7 @@ const translations = {
     'request.button': 'Make Request',
     'request.close': 'Close',
     'request.title': 'MAKE<br/>REQUEST',
-    'request.text': 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc<br/>vulputate libero et velit interdum, ac aliquet odio mattis. Class<br/>aptent taciti sociosqu ad litora torquent per conubia nostra,<br/>per inceptos himenaeos',
+    'request.text': 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc vulputate libero et velit interdum, ac aliquet odio mattis. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos',
     'request.placeholder.name': 'Name',
     'request.placeholder.company': 'Company',
     'request.placeholder.email': 'Email',
