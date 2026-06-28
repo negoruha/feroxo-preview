@@ -7,8 +7,8 @@ const translations = {
     'nav.contact': 'Contact',
     'request.button': 'Make Request',
     'request.close': 'Close',
-    'request.title': 'Make Request',
-    'request.text': 'Send us a short request and we will contact you with the right Feroxo equipment option.',
+    'request.title': 'MAKE<br/>REQUEST',
+    'request.text': 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc<br/>vulputate libero et velit interdum, ac aliquet odio mattis. Class<br/>aptent taciti sociosqu ad litora torquent per conubia nostra,<br/>per inceptos himenaeos',
     'request.placeholder.name': 'Name',
     'request.placeholder.company': 'Company',
     'request.placeholder.email': 'Email',
@@ -77,8 +77,8 @@ const translations = {
     'nav.contact': 'Kontakt',
     'request.button': 'Odeslat poptávku',
     'request.close': 'Zavřít',
-    'request.title': 'Odeslat poptávku',
-    'request.text': 'Pošlete nám krátkou poptávku a ozveme se vám s vhodným řešením Feroxo.',
+    'request.title': 'ODESLAT<br/>POPTÁVKU',
+    'request.text': 'Pošlete nám krátkou poptávku a my se vám ozveme<br/>s vhodným řešením Feroxo.',
     'request.placeholder.name': 'Jméno',
     'request.placeholder.company': 'Společnost',
     'request.placeholder.email': 'E-mail',
@@ -277,7 +277,7 @@ Object.assign(translations.en, {
   'request.selected': 'Selected Equipment',
   'request.equipment.help': 'Not sure what you need yet?<br/>Browse our equipment catalog<br/>or leave this section empty',
   'request.browse': 'Browse Equipment',
-  'request.privacy.home': 'By submitting this form you agree to our <a href="pages/privacy-policy.html">Privacy Policy</a>. We never share data with third parties.'
+  'request.privacy.home': 'By submitting this form you agree to our <a href="pages/privacy-policy.html">Privacy Policy</a>.<br/>We never share data with third parties.'
 });
 Object.assign(translations.cz, {
   'nav.resources': 'Zdroje',
@@ -288,7 +288,7 @@ Object.assign(translations.cz, {
   'request.selected': 'Vybrané vybavení',
   'request.equipment.help': 'Nejste si jistí, co potřebujete?<br/>Projděte si náš katalog vybavení<br/>nebo tuto část nechte prázdnou',
   'request.browse': 'Procházet vybavení',
-  'request.privacy.home': 'Odesláním formuláře souhlasíte s <a href="pages/privacy-policy.html">ochranou soukromí</a>. Vaše údaje nikdy nesdílíme s třetími stranami.'
+  'request.privacy.home': 'Odesláním formuláře souhlasíte s <a href="pages/privacy-policy.html">ochranou soukromí</a>.<br/>Vaše údaje nikdy nesdílíme s třetími stranami.'
 });
 
 const getTranslation = (key, lang = currentLanguage) => translations[lang]?.[key] ?? translations.en[key] ?? '';

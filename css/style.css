@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap');
+
 :root {
   --page-bg: #fafafa;
   --white: #ffffff;
@@ -4169,4 +4171,531 @@ html, body { max-width: 100%; overflow-x: clip; }
 }
 @media (max-width: 760px) {
   .technical-specs.technical-specs--figma > div { min-height: 62px; padding: 12px; }
+}
+
+
+/* HOME — Latest News & Articles: exact approved Figma exports.
+   The three compact cards are supplied as completed visual tiles, including
+   their blur and typography, so do not layer a second text/gradient above. */
+.home-page .latest-news__stack a::after,
+.home-page .latest-news__stack a > span {
+  display: none !important;
+}
+.home-page .latest-news__stack a img {
+  object-fit: fill !important;
+  transform: none !important;
+  filter: none !important;
+}
+.home-page .latest-news__feature img {
+  object-fit: fill !important;
+}
+.home-page .latest-news__feature > span {
+  font-family: Inter, Arial, sans-serif;
+  font-weight: 600;
+  font-size: calc(56 / 1840 * 100cqw);
+  line-height: 1;
+  letter-spacing: 0;
+}
+@media (max-width: 760px) {
+  .home-page .latest-news__stack a img {
+    object-fit: cover !important;
+  }
+}
+
+/* HOME FOOTER — final column separation.
+   Use stable Figma-based tracks on wide desktops and a flexible wrapping grid
+   below them so placeholder text can never overlap another column. */
+@media (min-width: 1200px) {
+  .home-page .site-footer__nav {
+    left: calc(652 / 1840 * 100cqw) !important;
+    right: auto !important;
+    display: grid !important;
+    grid-template-columns:
+      calc(170 / 1840 * 100cqw)
+      calc(220 / 1840 * 100cqw)
+      calc(220 / 1840 * 100cqw) !important;
+    column-gap: calc(230 / 1840 * 100cqw) !important;
+    align-items: start !important;
+  }
+
+  .home-page .site-footer__column:nth-child(2),
+  .home-page .site-footer__column:nth-child(3) {
+    min-width: calc(220 / 1840 * 100cqw) !important;
+  }
+}
+
+@media (min-width: 761px) and (max-width: 1199px) {
+  .home-page .site-footer__nav {
+    left: 34% !important;
+    right: 4% !important;
+    display: grid !important;
+    grid-template-columns: minmax(78px, .78fr) minmax(0, 1.15fr) minmax(0, 1.15fr) !important;
+    column-gap: clamp(42px, 6cqw, 82px) !important;
+    align-items: start !important;
+  }
+
+  .home-page .site-footer__column {
+    min-width: 0 !important;
+  }
+
+  .home-page .site-footer__column a,
+  .home-page .site-footer__column h3 {
+    white-space: normal !important;
+    overflow-wrap: anywhere !important;
+  }
+}
+
+/* Home / Built for Industry: approved bold body copy. */
+.home-page .built-industry__content p {
+  font-weight: 700;
+}
+
+
+/* --------------------------------------------------------------------------
+   Make Request — approved Frame 154 typography and control placement.
+   These rules preserve actual form functionality while matching the Figma
+   layout: Inter Bold 112 / 85% for title, Inter Regular 24 / 100% intro,
+   Inter Regular 14 / 100% form and privacy copy.
+   -------------------------------------------------------------------------- */
+.home-page .request-modal .request-modal__intro h2 {
+  font-family: Inter, Arial, sans-serif;
+  font-weight: 700;
+  font-size: calc(112 / 1632 * 100cqw);
+  line-height: .85;
+  letter-spacing: 0;
+  text-transform: uppercase;
+}
+.home-page .request-modal .request-modal__intro p {
+  max-width: calc(620 / 1632 * 100cqw);
+  margin: calc(22 / 1632 * 100cqw) 0 0;
+  font-family: Inter, Arial, sans-serif;
+  font-weight: 400;
+  font-size: calc(24 / 1632 * 100cqw);
+  line-height: 1;
+  letter-spacing: 0;
+}
+.home-page .request-modal .request-form__grid { gap: calc(16 / 1632 * 100cqw); }
+.home-page .request-modal .request-form input,
+.home-page .request-modal .request-form textarea,
+.home-page .request-modal .request-form__equipment > span,
+.home-page .request-modal .request-form__equipment em,
+.home-page .request-modal .request-form__equipment a,
+.home-page .request-modal .request-form__bottom > button,
+.home-page .request-modal .request-form__privacy {
+  font-family: Inter, Arial, sans-serif;
+  font-weight: 400;
+  letter-spacing: 0;
+}
+.home-page .request-modal .request-form input,
+.home-page .request-modal .request-form textarea {
+  font-size: calc(14 / 1632 * 100cqw);
+  line-height: 1;
+}
+.home-page .request-modal .request-form__equipment > span,
+.home-page .request-modal .request-form__equipment em,
+.home-page .request-modal .request-form__equipment a,
+.home-page .request-modal .request-form__bottom > button,
+.home-page .request-modal .request-form__privacy {
+  font-size: calc(14 / 1632 * 100cqw);
+  line-height: 1;
+}
+.home-page .request-modal .request-form__equipment em { line-height: 1; }
+.home-page .request-modal .request-form__bottom {
+  position: absolute;
+  left: calc(112 / 1632 * 100cqw);
+  bottom: calc(80 / 1632 * 100cqw);
+  margin: 0;
+  gap: calc(48 / 1632 * 100cqw);
+  align-items: center;
+}
+.home-page .request-modal .request-form__privacy {
+  max-width: calc(420 / 1632 * 100cqw);
+  color: var(--dark);
+}
+.home-page .request-modal .request-form__privacy input { display:none; }
+.home-page .request-modal .request-form__privacy a {
+  color: var(--dark);
+  text-decoration: none;
+}
+@media (max-width: 760px) {
+  .home-page .request-modal .request-modal__intro h2 { font-size:52px; }
+  .home-page .request-modal .request-modal__intro p { font-size:16px; line-height:1.05; }
+  .home-page .request-modal .request-form input,
+  .home-page .request-modal .request-form textarea,
+  .home-page .request-modal .request-form__equipment > span,
+  .home-page .request-modal .request-form__equipment em,
+  .home-page .request-modal .request-form__equipment a,
+  .home-page .request-modal .request-form__bottom > button,
+  .home-page .request-modal .request-form__privacy { font-size:14px; }
+  .home-page .request-modal .request-form__bottom {
+    position:static;
+    margin-top:14px;
+    gap:12px;
+  }
+}
+
+
+/* ========================================================================
+   CONTACT PAGE TYPOGRAPHY PASS — align with approved Figma reference
+   ======================================================================== */
+.contact-top .inner-top__title {
+  padding: 0 24px 25px;
+}
+.contact-top .inner-top__title h1 {
+  font-size: clamp(72px, calc(140 / 1840 * 100vw), 140px);
+  line-height: .85;
+  letter-spacing: 0;
+  font-weight: 700;
+}
+.contact-info-list article {
+  grid-template-columns: 54px minmax(0, 1fr);
+  gap: 24px;
+  align-items: start;
+}
+.contact-info-list .contact-icon {
+  width: 50px;
+  height: 50px;
+}
+.contact-info-list .contact-icon img {
+  width: 24px;
+  height: 24px;
+}
+.contact-info-list article:nth-child(1) .contact-icon img { width: 20px; height: 20px; }
+.contact-info-list h2 {
+  margin: 0 0 8px;
+  font-size: 32px;
+  line-height: .85;
+  letter-spacing: 0;
+  font-weight: 700;
+  color: #0D0202;
+}
+.contact-info-list p,
+.contact-info-list p a {
+  margin: 0;
+  font-size: 18px;
+  line-height: 1;
+  font-weight: 400;
+  color: rgba(13, 2, 2, .88);
+  text-decoration: none;
+}
+.contact-map-v2 {
+  border-radius: 26px;
+}
+.contact-map-v2 img {
+  object-fit: cover !important;
+  object-position: center;
+}
+.contact-map-v2__pin { display: none; }
+.contact-feature-row {
+  margin-top: 24px;
+  padding: 18px 18px 16px;
+  border: 1px solid rgba(13, 2, 2, .20);
+  border-radius: 18px;
+}
+.contact-feature-row article {
+  padding: 0 40px 0 0;
+  margin-right: 40px;
+}
+.contact-feature-row article:not(:last-child) {
+  border-right: 1px solid rgba(13, 2, 2, .14);
+}
+.contact-feature-row h2 {
+  margin: 0 0 8px;
+  font-size: 32px;
+  line-height: .85;
+  letter-spacing: 0;
+  font-weight: 700;
+  color: #0D0202;
+}
+.contact-feature-row p {
+  font-size: 18px;
+  line-height: 1;
+  font-weight: 400;
+  color: rgba(13, 2, 2, .88);
+}
+@media (max-width: 760px) {
+  .contact-top .inner-top__title { padding: 0 16px 18px; }
+  .contact-info-list h2 { font-size: 22px; }
+  .contact-info-list p,
+  .contact-info-list p a { font-size: 14px; line-height: 1.25; }
+  .contact-feature-row { padding: 20px; gap: 18px; }
+  .contact-feature-row article,
+  .contact-feature-row article:not(:last-child) {
+    margin-right: 0;
+    padding: 0 0 18px;
+    border-right: 0;
+    border-bottom: 1px solid rgba(13, 2, 2, .14);
+  }
+  .contact-feature-row article:last-child { padding-bottom: 0; border-bottom: 0; }
+  .contact-feature-row h2 { font-size: 22px; }
+  .contact-feature-row p { font-size: 14px; line-height: 1.25; }
+}
+
+/* ========================================================================
+   PRODUCTS PAGE TYPOGRAPHY — match Desktop - 7 Figma text metrics
+   ======================================================================== */
+.product-list-top .inner-top__title {
+  padding: 0 24px 25px;
+}
+.product-list-top .inner-top__title h1 {
+  font-family: Inter, Arial, sans-serif;
+  font-size: clamp(72px, calc(140 / 1840 * 100vw), 140px);
+  line-height: .85;
+  letter-spacing: 0;
+  font-weight: 700;
+}
+.products-page .category-pill span {
+  font-family: Inter, Arial, sans-serif;
+  font-weight: 700;
+  line-height: .85;
+  letter-spacing: 0;
+}
+.products-page .product-card h3 {
+  font-family: Inter, Arial, sans-serif;
+  font-size: 22px;
+  line-height: 1;
+  letter-spacing: 0;
+  font-weight: 700;
+}
+.products-page .product-card p {
+  font-family: Inter, Arial, sans-serif;
+  line-height: 1;
+  letter-spacing: 0;
+  margin: 6px 0 11px;
+}
+.products-page .product-card dl {
+  line-height: 1;
+  letter-spacing: 0;
+  margin-bottom: 14px;
+  padding-top: 8px;
+}
+.products-page .product-card dl div {
+  margin: 7px 0;
+}
+.products-page .product-card dt,
+.products-page .product-card dd {
+  line-height: 1;
+}
+.products-page .product-card__request {
+  font-family: Inter, Arial, sans-serif;
+  font-weight: 400;
+  line-height: 1;
+  letter-spacing: 0;
+}
+@media (max-width: 760px) {
+  .product-list-top .inner-top__title { padding: 0 16px 18px; }
+  .products-page .product-card h3 { font-size: 21px; }
+}
+
+
+/* ========================================================================
+   PRODUCT DETAIL — Desktop 8 Figma typography and visual asset pass
+   ======================================================================== */
+.product-detail-page,
+.product-detail-page button,
+.product-detail-page input,
+.product-detail-page textarea {
+  font-family: 'Inter', Arial, Helvetica, sans-serif;
+}
+
+/* The two supplied Figma exports are used at their intended visual scale. */
+.product-detail-page .product-certification-strip {
+  display: block;
+  width: min(100%, 536px);
+  max-width: 536px;
+  height: auto;
+  margin: 14px 0 16px;
+  object-fit: contain;
+  object-position: left center;
+}
+.product-detail-page .product-warranty {
+  display: block;
+  width: 252px;
+  max-width: 100%;
+  height: auto;
+  margin: 0 auto 2px;
+  object-fit: contain;
+}
+
+.product-detail-page .product-summary h1 {
+  margin: 0;
+  font-size: 32px;
+  font-weight: 700;
+  line-height: 1;
+  letter-spacing: 0;
+}
+.product-detail-page .product-summary__meta {
+  margin: 5px 0 16px;
+  font-size: 14px;
+  line-height: 1;
+  font-weight: 400;
+  letter-spacing: 0;
+}
+.product-detail-page .product-summary__description {
+  margin: 0;
+  color: rgba(13, 2, 2, .88);
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 1.17;
+  letter-spacing: 0;
+}
+.product-detail-page .product-summary__description + .product-summary__description {
+  margin-top: 13px;
+}
+
+.product-detail-page .product-accordions {
+  margin-top: 0;
+  display: grid;
+  gap: 12px;
+}
+.product-detail-page .product-accordions details {
+  margin: 0;
+  border: 1px solid #D9D9D9;
+  border-radius: 14px;
+  overflow: hidden;
+  background: #FAFAFA;
+}
+.product-detail-page .product-accordions summary {
+  min-height: 60px;
+  padding: 18px 20px;
+  font-size: 16px;
+  line-height: 1;
+  font-weight: 700;
+  letter-spacing: 0;
+}
+.product-detail-page .product-accordions ul {
+  margin: 0;
+  padding: 0 24px 18px 38px;
+  font-size: 13px;
+  line-height: 1.15;
+  font-weight: 400;
+  letter-spacing: 0;
+}
+.product-detail-page .product-accordions li + li { margin-top: 2px; }
+
+.product-detail-page .product-side-v2 {
+  gap: 16px;
+}
+.product-detail-page .product-side-v2 > button {
+  min-height: 50px;
+  border-radius: 999px;
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 1;
+}
+.product-detail-page .product-side-v2__onpage {
+  gap: 12px;
+}
+.product-detail-page .product-side-v2__eyebrow {
+  font-size: 12px;
+  line-height: 1;
+  font-weight: 400;
+}
+.product-detail-page .product-side-v2__onpage > strong {
+  font-size: 18px;
+  font-weight: 700;
+  line-height: 1;
+  letter-spacing: 0;
+}
+.product-detail-page .product-side-v2 nav { gap: 14px; }
+.product-detail-page .product-side-v2 nav a {
+  font-size: 12px;
+  line-height: 1;
+  font-weight: 400;
+  letter-spacing: 0;
+}
+
+.product-detail-page .detail-section {
+  margin-top: 42px;
+}
+.product-detail-page .detail-section h2,
+.product-detail-page .related-section h2 {
+  margin: 0 0 16px;
+  font-size: 26px;
+  line-height: .95;
+  font-weight: 700;
+  letter-spacing: 0;
+}
+.product-detail-page .technical-specs.technical-specs--figma > div {
+  min-height: 64px;
+  padding: 14px 16px;
+}
+.product-detail-page .technical-specs.technical-specs--figma dt,
+.product-detail-page .technical-specs.technical-specs--figma dd {
+  font-size: 12px;
+  line-height: 1.2;
+  font-weight: 400;
+  letter-spacing: 0;
+}
+.product-detail-page .technical-specs.technical-specs--figma dd { font-weight: 500; }
+
+.product-detail-page .equipment-detail h3 {
+  margin: 0 0 10px;
+  font-size: 17px;
+  line-height: 1;
+  font-weight: 700;
+  letter-spacing: 0;
+}
+.product-detail-page .equipment-detail ul,
+.product-detail-page .equipment-detail p {
+  font-size: 12px;
+  line-height: 1.2;
+  font-weight: 400;
+  letter-spacing: 0;
+}
+.product-detail-page .equipment-detail li + li { margin-top: 2px; }
+.product-detail-page .detail-video { border-radius: 18px; }
+.product-detail-page .documents-grid { gap: 12px; }
+.product-detail-page .document-card {
+  min-height: 92px;
+  padding: 14px 18px;
+  border-radius: 14px;
+}
+.product-detail-page .document-card__text strong {
+  font-size: 13px;
+  line-height: 1;
+  font-weight: 500;
+}
+.product-detail-page .document-card__text small {
+  margin-top: 5px;
+  font-size: 11px;
+  line-height: 1;
+  font-weight: 400;
+}
+.product-detail-page .document-card__open { font-size: 12px; font-weight: 400; }
+.product-detail-page .related-section { margin-top: 42px; }
+.product-detail-page .product-grid--accessories .product-card h3 {
+  font-size: 18px;
+  line-height: 1;
+  font-weight: 700;
+  letter-spacing: 0;
+}
+.product-detail-page .product-grid--accessories .product-card p,
+.product-detail-page .product-grid--accessories .product-card dt,
+.product-detail-page .product-grid--accessories .product-card dd {
+  font-size: 11px;
+  line-height: 1.15;
+  letter-spacing: 0;
+}
+.product-detail-page .product-grid--accessories .product-card__request {
+  font-size: 12px;
+  line-height: 1;
+  font-weight: 500;
+}
+
+@media (max-width: 1500px) {
+  .product-detail-page .product-certification-strip { width: min(100%, 440px); }
+  .product-detail-page .product-accordions summary { min-height: 54px; padding: 16px 18px; font-size: 15px; }
+  .product-detail-page .product-accordions ul { font-size: 12px; padding: 0 22px 16px 34px; }
+}
+@media (max-width: 760px) {
+  .product-detail-page .product-certification-strip { width: min(100%, 360px); margin: 12px 0; }
+  .product-detail-page .product-warranty { width: 170px; margin-left: 0; }
+  .product-detail-page .product-summary h1 { font-size: 27px; }
+  .product-detail-page .product-summary__meta { font-size: 13px; }
+  .product-detail-page .product-summary__description { font-size: 13px; line-height: 1.3; }
+  .product-detail-page .product-accordions summary { min-height: 48px; padding: 15px 16px; font-size: 14px; }
+  .product-detail-page .product-accordions ul { padding: 0 18px 15px 30px; font-size: 12px; }
+  .product-detail-page .detail-section { margin-top: 36px; }
+  .product-detail-page .document-card { min-height: 76px; padding: 12px; }
 }
