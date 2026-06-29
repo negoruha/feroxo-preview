@@ -933,3 +933,70 @@ productVideoCloseButtons.forEach((button) => button.addEventListener('click', cl
 window.addEventListener('keydown', (event) => {
   if (event.key === 'Escape') closeProductVideo();
 });
+
+
+/* ========================================================================
+   FINAL QA — EN/CZ language switcher coverage across all static pages
+   ======================================================================== */
+Object.assign(looseTextTranslations.cz, {
+  'CONTACT': 'KONTAKT',
+  'PRODUCTS': 'PRODUKTY',
+  'RESOURCES': 'ZDROJE',
+  'WELDING GENERATOR': 'SVAŘOVACÍ GENERÁTOR',
+  'DIESEL GENERATORS': 'DIESELOVÉ GENERÁTORY',
+  'DIESEL WELDERS': 'DIESELOVÉ SVÁŘEČKY',
+  'RELATED PRODUCTS': 'SOUVISEJÍCÍ PRODUKTY',
+  'TRAILERS': 'PŘÍVĚSY',
+  'ADDRESS': 'ADRESA',
+  'EMAIL': 'E-MAIL',
+  'PHONE': 'TELEFON',
+  'BUSINESS HOURS': 'PRACOVNÍ DOBA',
+  'INDUSTRIAL POWER SOLUTIONS FOR EUROPE': 'PRŮMYSLOVÁ ENERGETICKÁ ŘEŠENÍ PRO EVROPU',
+  'EUROPEAN SERVICE SUPPORT': 'EVROPSKÁ SERVISNÍ PODPORA',
+  'NEED HELP CHOOSING EQUIPMENT?': 'POTŘEBUJETE POMOCI S VÝBĚREM VYBAVENÍ?',
+  'TECHNICAL SPECIFICATIONS': 'TECHNICKÉ SPECIFIKACE',
+  'RELATED ACCESSORIES': 'SOUVISEJÍCÍ PŘÍSLUŠENSTVÍ',
+  'KEY SPECIFICATIONS': 'KLÍČOVÉ SPECIFIKACE',
+  'PERFORMANCE & BENEFITS': 'VÝKON A VÝHODY',
+  'TYPICAL APPLICATIONS': 'TYPOVÉ POUŽITÍ',
+  'KEY FEATURES': 'KLÍČOVÉ VLASTNOSTI',
+  'WHY CHOOSE THIS MODEL': 'PROČ ZVOLIT TENTO MODEL',
+  'MAKE REQUEST': 'ODESLAT POPTÁVKU',
+  'SEND REQUEST': 'ODESLAT POPTÁVKU',
+  'SEE EQUIPMENT': 'ZOBRAZIT VYBAVENÍ'
+});
+
+const pageTitles = {
+  en: {
+    'index.html': 'Feroxo — Industrial Welding Equipment',
+    'products.html': 'Products — Feroxo',
+    'contact.html': 'Contact — Feroxo',
+    'resources.html': 'Resources — Feroxo'
+  },
+  cz: {
+    'index.html': 'Feroxo — Průmyslové svařovací vybavení',
+    'products.html': 'Produkty — Feroxo',
+    'contact.html': 'Kontakt — Feroxo',
+    'resources.html': 'Zdroje — Feroxo'
+  }
+};
+
+const syncLanguageUi = (lang) => {
+  const selected = lang === 'cz' ? 'Czech' : 'English';
+  document.querySelectorAll('[data-language-button]').forEach((button) => {
+    button.setAttribute('aria-label', lang === 'cz' ? 'Vybrat jazyk' : 'Choose language');
+    button.dataset.currentLanguage = selected;
+  });
+  const filename = window.location.pathname.split('/').pop() || 'index.html';
+  const title = pageTitles[lang]?.[filename];
+  if (title) document.title = title;
+};
+
+const originalApplyTranslationsFinalQa = applyTranslations;
+applyTranslations = (lang) => {
+  originalApplyTranslationsFinalQa(lang);
+  syncLanguageUi(currentLanguage);
+};
+
+// Re-apply once after the final coverage mappings were registered.
+applyTranslations(currentLanguage);
