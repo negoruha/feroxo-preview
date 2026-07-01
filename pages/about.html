@@ -1,79 +1,131 @@
-<!DOCTYPE html>
-
+<!doctype html>
 <html lang="en">
 <head>
-<meta charset="utf-8"/>
-<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-<title>Feroxo — About Us</title>
-<link href="../css/style.css" rel="stylesheet"/>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="theme-color" content="#BF2121"/>
+  <title>Feroxo - About Us</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+  <link rel="stylesheet" href="../css/style.css"/>
 </head>
 <body>
-<div class="page inner-page">
-<section class="inner-top">
-<header class="site-header inner-site-header" data-site-header="">
-<a aria-label="Feroxo homepage" class="site-header__logo" href="../index.html">
-<img alt="Feroxo" src="../assets/logo/feroxo-logo.svg"/>
-</a>
-<nav aria-label="Main navigation" class="site-nav">
-<a class="site-nav__link is-current" data-i18n="nav.about" href="../pages/about.html">About Us</a>
-<a class="site-nav__link" data-i18n="nav.products" href="../pages/products.html">Products</a>
-<a class="site-nav__link" data-i18n="nav.service" href="../pages/service.html">Service</a>
-<a class="site-nav__link" data-i18n="nav.resources" href="../pages/resources.html">Resources</a>
-<a class="site-nav__link" data-i18n="nav.contact" href="../pages/contact.html">Contact</a>
-</nav>
-<div class="site-header__actions">
-<div class="language" data-language="">
-<button aria-label="Choose language" class="language__button" data-language-button="" type="button">
-<img alt="" src="../assets/icons/language-globe.svg"/>
-</button>
-<div aria-label="Language menu" class="language__menu"><button data-lang-option="en" type="button"><img alt="United Kingdom flag" class="language__flag" src="../assets/icons/flag-uk.svg"/><span>English</span></button><button data-lang-option="cz" type="button"><img alt="Czech Republic flag" class="language__flag" src="../assets/icons/flag-cz.svg"/><span>Czech</span></button></div>
+<div class="page about-page">
+  <section class="about-hero" aria-labelledby="about-hero-title">
+    <img class="about-hero__image" src="../assets/images/about/proven-reliability-hero.png" alt="Shindaiwa welding generator at an industrial work site"/>
+    <div class="about-hero__shade" aria-hidden="true"></div>
+    <header class="site-header" data-site-header>
+      <a class="site-header__logo" href="../index.html" aria-label="Feroxo homepage"><img src="../assets/logo/feroxo-logo.svg" alt="Feroxo"/></a>
+      <button class="site-menu-toggle" type="button" aria-label="Open site navigation" aria-expanded="false" data-menu-toggle><span></span><span></span><span></span></button>
+      <nav class="site-nav" aria-label="Main navigation">
+        <a class="site-nav__link is-current" href="about.html" data-i18n="nav.about">About Us</a>
+        <a class="site-nav__link" href="products.html" data-i18n="nav.products">Products</a>
+        <a class="site-nav__link" href="service.html" data-i18n="nav.service">Service</a>
+        <a class="site-nav__link" href="resources.html" data-i18n="nav.resources">Resources</a>
+        <a class="site-nav__link" href="contact.html" data-i18n="nav.contact">Contact</a>
+      </nav>
+      <div class="site-header__actions">
+        <div class="language" data-language>
+          <button class="language__button" type="button" data-language-button aria-label="Choose language"><img src="../assets/icons/language-globe.svg" alt=""/></button>
+          <div class="language__menu" aria-label="Language menu"><button data-lang-option="en" type="button"><img class="language__flag" src="../assets/icons/flag-uk.svg" alt="United Kingdom flag"/><span>English</span></button><button data-lang-option="cz" type="button"><img class="language__flag" src="../assets/icons/flag-cz.svg" alt="Czech Republic flag"/><span>Czech</span></button></div>
+        </div>
+        <button class="request-button" type="button" data-open-request data-i18n="request.button">Make Request</button>
+      </div>
+    </header>
+    <h1 id="about-hero-title" class="about-hero__title about-animate" data-i18n-html="about.hero.title">PROVEN JAPANESE<br/>RELIABILITY</h1>
+    <p class="about-hero__copy about-animate" data-i18n="about.hero.copy">The Feroxo team has been supplying and servicing SHINDAIWA welding equipment since 2018 - now serving the Czech and European market</p>
+  </section>
+
+  <main class="about-main">
+    <section class="about-grid about-grid--intro" aria-label="Feroxo experience">
+      <article class="about-proof about-card about-animate">
+        <img src="../assets/images/about/proven-practice.jpg" alt="Shindaiwa equipment in operation at an industrial site"/>
+        <div class="about-proof__shade" aria-hidden="true"></div>
+        <div class="about-proof__sectors">
+          <div><img src="../assets/icons/about-oil-gas.svg" alt=""/><span><strong data-i18n="about.sector.oil.title">OIL &amp; GAS SECTOR</strong><small data-i18n-html="about.sector.oil.text">Welding work on pipeline<br/>infrastructure</small></span></div>
+          <div><img src="../assets/icons/about-municipal.svg" alt=""/><span><strong data-i18n="about.sector.municipal.title">MUNICIPAL SECTOR</strong><small data-i18n-html="about.sector.municipal.text">Infrastructure repairs in field<br/>conditions</small></span></div>
+          <div><img src="../assets/icons/about-rail.svg" alt=""/><span><strong data-i18n="about.sector.rail.title">RAIL</strong><small data-i18n-html="about.sector.rail.text">Welding of railway track<br/>infrastructure</small></span></div>
+        </div>
+        <div class="about-proof__stat"><strong>170+</strong><span data-i18n-html="about.stat.label">units of SHINDAIWA<br/>equipment in operation<br/>since 2018</span></div>
+      </article>
+
+      <article class="about-copy-card about-card about-animate">
+        <h2 data-i18n-html="about.practice.title">PROVEN IN<br/>PRACTICE</h2>
+        <p data-i18n-html="about.practice.p1">Since 2018, we have supplied and supported SHINDAIWA diesel<br/>welding generators, delivering more than 170 units now operating<br/>across oil &amp; gas, municipal, and rail infrastructure projects</p>
+        <p data-i18n-html="about.practice.p2">This experience is the foundation of Feroxo in the Czech Republic. We<br/>know how SHINDAIWA performs where it matters most - on real job<br/>sites, in rain, freezing temperatures, and round-the-clock operations</p>
+      </article>
+
+      <article class="about-copy-card about-card about-animate">
+        <h2 data-i18n-html="about.engineering.title">JAPANESE<br/>ENGINEERING</h2>
+        <p data-i18n-html="about.engineering.p1">SHINDAIWA, a brand of Yamabiko Corporation (Japan), has<br/>specialized in professional welding generators and<br/>power generators since 1972</p>
+        <p data-i18n-html="about.engineering.p2">Built on engineering innovation, manufacturing excellence, and strict<br/>quality control, the brand has introduced industry milestones<br/>including the first diesel welding generator, ultra-quiet generator<br/>technology, and multi-process welding systems</p>
+      </article>
+
+      <section class="about-timeline about-animate" aria-label="Shindaiwa history">
+        <article class="about-timeline__highlight"><img src="../assets/images/about/icon-generator-white.png" alt=""/><strong>1973</strong><span data-i18n-html="about.timeline.first">First engine-driven<br/>welding generator</span></article>
+        <article><span>1979</span></article>
+        <article><span>2001</span></article>
+        <article><span>2009</span></article>
+        <article><span>2015</span></article>
+      </section>
+
+      <article class="about-reliability about-card about-animate">
+        <img src="../assets/images/about/cost-saving.jpg" alt="Shindaiwa welding work at night"/>
+        <div class="about-reliability__shade" aria-hidden="true"></div>
+        <div class="about-reliability__list">
+          <div><img src="../assets/icons/about-fuel-efficiency.svg" alt=""/><span><strong data-i18n="about.reliability.fuel.title">FUEL EFFICIENCY</strong><small data-i18n="about.reliability.fuel.text">Lower running costs</small></span></div>
+          <div><img src="../assets/icons/about-long-service.svg" alt=""/><span><strong data-i18n="about.reliability.service.title">LONG SERVICE</strong><small data-i18n="about.reliability.service.text">Less downtime</small></span></div>
+          <div><img src="../assets/icons/about-field-durability.svg" alt=""/><span><strong data-i18n="about.reliability.durable.title">FIELD DURABILITY</strong><small data-i18n="about.reliability.durable.text">Built for harsh conditions</small></span></div>
+        </div>
+      </article>
+
+      <article class="about-copy-card about-card about-animate">
+        <h2 data-i18n-html="about.saving.title">COST-SAVING<br/>RELIABILITY</h2>
+        <p data-i18n-html="about.saving.p1">In industrial and infrastructure projects, reliability matters more than<br/>initial purchase cost. SHINDAIWA is engineered for continuous<br/>operation with efficient fuel consumption, extended service intervals,<br/>and durable field-ready construction</p>
+        <p data-i18n-html="about.saving.p2">Feroxo supports that reliability through spare parts availability,<br/>technical consultation, and service assistance across<br/>the Czech and European markets</p>
+      </article>
+    </section>
+
+    <section class="about-support about-animate" aria-label="Complete support">
+      <article><h2 data-i18n-html="about.support.selection.title">TAILORED<br/>EQUIPMENT<br/>SELECTION</h2><p data-i18n-html="about.support.selection.text">Matched to your technical<br/>requirements and<br/>operational needs</p></article>
+      <article><h2 data-i18n-html="about.support.warranty.title">LOCAL SERVICE &amp;<br/>WARRANTY</h2><p data-i18n-html="about.support.warranty.text">Reliable support throughout<br/>the equipment lifecycle</p></article>
+      <article><h2 data-i18n-html="about.support.parts.title">GENUINE PARTS<br/>AVAILABILITY</h2><p data-i18n-html="about.support.parts.text">Original SHINDAIWA spare<br/>parts stocked in the Czech<br/>Republic</p></article>
+      <article><h2 data-i18n-html="about.support.stage.title">STAGE V READY</h2><p data-i18n-html="about.support.stage.text">Equipment aligned with<br/>current European emissions<br/>standards</p></article>
+      <h2 class="about-support__vertical" data-i18n-html="about.support.heading">COMPLETE<br/>SUPPORT</h2>
+    </section>
+
+    <section class="about-industries about-animate" aria-label="Serving critical industries">
+      <div class="about-industries__side">
+        <h2 data-i18n-html="about.industries.title">SERVING<br/>CRITICAL<br/>INDUSTRIES</h2>
+        <div class="about-industries__controls"><button type="button" data-about-industries-prev aria-label="Previous industry">‹</button><button type="button" data-about-industries-next aria-label="Next industry">›</button></div>
+      </div>
+      <div class="about-industries__viewport" data-about-industries-viewport>
+        <div class="about-industries__track" data-about-industries-track>
+          <article><img src="../assets/images/about/industry-oil-gas.jpg" alt="Oil and gas industrial site"/><strong data-i18n="about.industry.oil">OIL &amp; GAS</strong></article>
+          <article><img src="../assets/images/about/industry-rail.jpg" alt="Railway tracks"/><strong data-i18n="about.industry.rail">RAIL</strong></article>
+          <article><img src="../assets/images/about/industry-energy.jpg" alt="Energy infrastructure"/><strong data-i18n="about.industry.energy">ENERGY</strong></article>
+          <article><img src="../assets/images/about/industry-steel-erection.jpg" alt="Steel erection site"/><strong data-i18n="about.industry.steel">STEEL ERECTION</strong></article>
+        </div>
+      </div>
+    </section>
+
+    <section class="about-cta about-animate" aria-label="Project request">
+      <h2 data-i18n-html="about.cta.title">READY TO DISCUSS<br/>YOUR PROJECT?</h2>
+      <p data-i18n="about.cta.copy">Send us a quick request - we'll recommend the right model for your task</p>
+      <div><button type="button" data-open-request data-i18n="request.button">Make Request</button><a href="products.html" data-i18n="about.cta.catalogue">View Catalogue</a></div>
+    </section>
+  </main>
+
+  <footer aria-label="Feroxo footer" class="site-footer about-footer">
+    <div class="site-footer__brand"><a class="site-footer__logo" href="../index.html" aria-label="Feroxo homepage"><img src="../assets/footer/feroxo-footer-logo.svg" alt="Feroxo"/></a><p data-i18n-html="footer.tagline">Premium Japanese industrial<br/>equipment for the European market</p><div aria-label="Social links" class="site-footer__socials"><a href="#" aria-label="Instagram"></a><a href="#" aria-label="Facebook"></a><a href="#" aria-label="LinkedIn"></a><a href="#" aria-label="YouTube"></a></div></div>
+    <nav aria-label="Footer navigation" class="site-footer__nav"><div class="site-footer__column"><h3 data-i18n="footer.col1.title">Company</h3><a href="about.html" data-i18n="footer.link.about">About Us</a><a href="products.html" data-i18n="footer.link.products">Products</a><a href="service.html" data-i18n="footer.link.service">Service</a><a href="resources.html" data-i18n="nav.resources">Resources</a><a href="contact.html" data-i18n="footer.link.contact">Contact</a></div><div class="site-footer__column"><h3>Lorem ipsum</h3><a href="#">Lorem ipsum dolor</a><a href="#">Lorem ipsum dolor sit</a><a href="#">Lorem ipsum</a><a href="#">Lorem ipsum dolor</a><a href="#">Lorem ipsum</a></div><div class="site-footer__column"><h3>Lorem ipsum</h3><a href="#">Lorem ipsum dolor</a><a href="#">Lorem ipsum dolor sit</a><a href="#">Lorem ipsum</a><a href="#">Lorem ipsum dolor</a><a href="#">Lorem ipsum</a></div></nav>
+    <p class="site-footer__copy" data-i18n="footer.copy">© 2026 Feroxo Welding S.R.O. All Rights Reserved</p>
+  </footer>
 </div>
-<button class="request-button" data-i18n="request.button" data-open-request="" type="button">Make Request</button>
-</div>
-</header>
-<div class="inner-top__title"><h1 data-i18n="page.about.title">About Us</h1></div>
-</section>
-<main class="inner-content placeholder-page">
-<div class="breadcrumb"><a href="../index.html">⌂</a><span>/</span><span data-i18n="page.about.title">About Us</span></div>
-<section class="placeholder-card"><p class="under-development__eyebrow">Feroxo</p><h2 data-i18n="page.about.title">About Us</h2><p data-i18n="page.dev.text">This page is in development now. The header is already connected, and we will fill this section step by step.</p><a class="back-link" data-i18n="page.back" href="../index.html">Back Home</a></section>
-</main>
-<footer aria-label="Feroxo footer" class="site-footer inner-footer">
-<div class="site-footer__brand">
-<a aria-label="Feroxo homepage" class="site-footer__logo" href="../index.html"><img alt="Feroxo" src="../assets/footer/feroxo-footer-logo.svg"/></a>
-<p data-i18n-html="footer.tagline">Premium Japanese industrial<br/>equipment for the European market</p>
-<div aria-label="Social links" class="site-footer__socials"><button type="button"></button><button type="button"></button><button type="button"></button><button type="button"></button></div>
-</div>
-<nav aria-label="Footer navigation" class="site-footer__nav">
-<div class="site-footer__column"><h3 data-i18n="footer.col1.title">Company</h3><a data-i18n="footer.link.about" href="../pages/about.html">About Us</a><a data-i18n="footer.link.contact" href="../pages/contact.html">Contact</a><a data-i18n="footer.link.news" href="../pages/resources.html">Resources</a><a href="../pages/resources.html">Resources</a><a data-i18n="footer.link.privacy" href="../pages/privacy-policy.html">Privacy Policy</a></div>
-<div class="site-footer__column"><h3 data-i18n="footer.col2.title">Equipment</h3><a data-i18n="footer.link.products" href="../pages/products.html">Products</a><a data-i18n="page.equipment.title" href="../pages/equipment.html">Equipment</a><a data-i18n="cat.dieselWelders" href="../pages/categories/diesel-welders.html">Diesel Welders</a><a data-i18n="cat.dieselGenerators" href="../pages/categories/diesel-generators.html">Diesel Generators</a><a data-i18n="cat.welderGenerators" href="../pages/categories/welder-generators.html">Welder Generators</a></div>
-<div class="site-footer__column"><h3 data-i18n="footer.col3.title">Support</h3><a data-i18n="footer.link.service" href="../pages/service.html">Service</a><a data-i18n="footer.link.contact" href="../pages/contact.html">Contact</a><a data-i18n="product.add" href="../pages/equipment.html">Add to Request</a><a data-i18n="footer.link.news" href="../pages/resources.html">Resources</a><a data-i18n="footer.link.terms" href="../pages/terms.html">Terms</a></div>
-</nav>
-<p class="site-footer__copy" data-i18n="footer.copy">© 2026 Feroxo Welding S.R.O. All Rights Reserved</p>
-</footer>
-</div>
-<div aria-hidden="true" class="modal request-modal" data-modal="request">
-<div class="modal__backdrop" data-close-request=""></div>
-<div aria-labelledby="request-title" aria-modal="true" class="modal__box" role="dialog">
-<button aria-label="Close" class="modal__close" data-close-request="" data-i18n-aria-label="request.close" type="button">×</button>
-<h2 data-i18n="request.title" id="request-title">Make Request</h2>
-<p data-i18n="request.text">Send us a short request and we will contact you with the right Feroxo equipment option.</p>
-<form action="../send-request.php" class="request-form" data-request-form="" enctype="multipart/form-data" method="post" novalidate="">
-<div class="request-form__grid">
-<input data-i18n-placeholder="request.placeholder.name" name="name" placeholder="Name" required="" type="text"/>
-<input data-i18n-placeholder="request.placeholder.company" name="company" placeholder="Company" type="text"/>
-<input data-i18n-placeholder="request.placeholder.email" name="email" placeholder="Email" required="" type="email"/>
-<input data-i18n-placeholder="request.placeholder.phone" name="phone" placeholder="Phone" type="tel"/>
-<input data-i18n-placeholder="request.placeholder.equipment" name="equipment" placeholder="Equipment / product" type="text"/>
-</div>
-<textarea data-i18n-placeholder="request.placeholder.message" name="message" placeholder="Message"></textarea>
-<label class="request-form__file"><span data-i18n="request.file">Attach file (optional)</span><input name="attachment" type="file"/></label>
-<label class="request-form__privacy"><input name="privacy" required="" type="checkbox"/><span data-i18n="request.privacy">By submitting this form you agree to our Privacy Policy. We never share data with third parties.</span></label>
-<button data-i18n="request.send" type="submit">Send Request</button>
-<p class="request-form__note" data-i18n="request.note">The message is prepared for info@feroxo.cz.</p>
-</form>
-</div>
-</div>
-<div aria-hidden="true" class="image-lightbox" data-image-lightbox=""><button class="image-lightbox__close" data-lightbox-close="" type="button">×</button><img alt="" data-lightbox-image=""/></div>
+
+<div class="modal request-modal" data-modal="request" aria-hidden="true"><div class="modal__backdrop" data-close-request></div><section class="modal__box" role="dialog" aria-modal="true" aria-labelledby="request-title"><button class="modal__close" type="button" data-close-request aria-label="Close">×</button><div class="request-modal__intro"><h2 id="request-title" data-i18n-html="request.title">MAKE<br/>REQUEST</h2><p data-i18n-html="request.text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc vulputate libero et velit interdum, ac aliquet odio mattis. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos</p></div><form class="request-form" data-request-form action="../send-request.php" method="post" enctype="multipart/form-data" novalidate><div class="request-form__grid"><input type="text" name="name" placeholder="Full Name" data-i18n-placeholder="request.placeholder.fullname" required/><input type="text" name="company" placeholder="Company Name" data-i18n-placeholder="request.placeholder.companyname"/><input type="email" name="email" placeholder="Email" data-i18n-placeholder="request.placeholder.email" required/><input type="tel" name="phone" placeholder="Phone Number" data-i18n-placeholder="request.placeholder.phone"/></div><label class="request-form__equipment"><span data-i18n="request.selected">Selected Equipment</span><input class="request-form__equipment-value" type="hidden" name="equipment" value=""/><em data-i18n-html="request.equipment.help">Not sure what you need yet?<br/>Browse our equipment catalog<br/>or leave this section empty</em><a href="products.html" data-i18n="request.browse">Browse Equipment</a></label><textarea name="message" placeholder="Project Details" data-i18n-placeholder="request.placeholder.project"></textarea><div class="request-form__bottom"><button type="submit" data-i18n="request.send">Send Request</button><label class="request-form__privacy"><input type="checkbox" name="privacy" required checked/><span data-i18n-html="request.privacy.home">By submitting this form you agree to our <a href="privacy-policy.html">Privacy Policy</a>.<br/>We never share data with third parties</span></label></div></form></section></div>
+<div class="image-lightbox" data-image-lightbox aria-hidden="true"><button type="button" class="image-lightbox__close" data-lightbox-close>×</button><img alt="" data-lightbox-image/></div>
 <script src="../js/main.js"></script>
+<script src="../js/about.js"></script>
 </body>
 </html>

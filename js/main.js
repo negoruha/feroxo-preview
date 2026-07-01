@@ -1000,3 +1000,102 @@ applyTranslations = (lang) => {
 
 // Re-apply once after the final coverage mappings were registered.
 applyTranslations(currentLanguage);
+
+/* ========================================================================
+   ABOUT US - Desktop 17 content in English and Czech
+   ======================================================================== */
+Object.assign(translations.en, {
+  'about.hero.title': 'PROVEN JAPANESE<br>RELIABILITY',
+  'about.hero.copy': 'The Feroxo team has been supplying and servicing SHINDAIWA welding equipment since 2018 - now serving the Czech and European market',
+  'about.sector.oil.title': 'OIL & GAS SECTOR',
+  'about.sector.oil.text': 'Welding work on pipeline<br>infrastructure',
+  'about.sector.municipal.title': 'MUNICIPAL SECTOR',
+  'about.sector.municipal.text': 'Infrastructure repairs in field<br>conditions',
+  'about.sector.rail.title': 'RAIL',
+  'about.sector.rail.text': 'Welding of railway track<br>infrastructure',
+  'about.stat.label': 'units of SHINDAIWA<br>equipment in operation<br>since 2018',
+  'about.practice.title': 'PROVEN IN<br>PRACTICE',
+  'about.practice.p1': 'Since 2018, we have supplied and supported SHINDAIWA diesel<br>welding generators, delivering more than 170 units now operating<br>across oil & gas, municipal, and rail infrastructure projects',
+  'about.practice.p2': 'This experience is the foundation of Feroxo in the Czech Republic. We<br>know how SHINDAIWA performs where it matters most - on real job<br>sites, in rain, freezing temperatures, and round-the-clock operations',
+  'about.engineering.title': 'JAPANESE<br>ENGINEERING',
+  'about.engineering.p1': 'SHINDAIWA, a brand of Yamabiko Corporation (Japan), has<br>specialized in professional welding generators and<br>power generators since 1972',
+  'about.engineering.p2': 'Built on engineering innovation, manufacturing excellence, and strict<br>quality control, the brand has introduced industry milestones<br>including the first diesel welding generator, ultra-quiet generator<br>technology, and multi-process welding systems',
+  'about.timeline.first': 'First engine-driven<br>welding generator',
+  'about.reliability.fuel.title': 'FUEL EFFICIENCY',
+  'about.reliability.fuel.text': 'Lower running costs',
+  'about.reliability.service.title': 'LONG SERVICE',
+  'about.reliability.service.text': 'Less downtime',
+  'about.reliability.durable.title': 'FIELD DURABILITY',
+  'about.reliability.durable.text': 'Built for harsh conditions',
+  'about.saving.title': 'COST-SAVING<br>RELIABILITY',
+  'about.saving.p1': 'In industrial and infrastructure projects, reliability matters more than<br>initial purchase cost. SHINDAIWA is engineered for continuous<br>operation with efficient fuel consumption, extended service intervals,<br>and durable field-ready construction',
+  'about.saving.p2': 'Feroxo supports that reliability through spare parts availability,<br>technical consultation, and service assistance across<br>the Czech and European markets',
+  'about.support.selection.title': 'TAILORED<br>EQUIPMENT<br>SELECTION',
+  'about.support.selection.text': 'Matched to your technical<br>requirements and<br>operational needs',
+  'about.support.warranty.title': 'LOCAL SERVICE &<br>WARRANTY',
+  'about.support.warranty.text': 'Reliable support throughout<br>the equipment lifecycle',
+  'about.support.parts.title': 'GENUINE PARTS<br>AVAILABILITY',
+  'about.support.parts.text': 'Original SHINDAIWA spare<br>parts stocked in the Czech<br>Republic',
+  'about.support.stage.title': 'STAGE V READY',
+  'about.support.stage.text': 'Equipment aligned with<br>current European emissions<br>standards',
+  'about.support.heading': 'COMPLETE<br>SUPPORT',
+  'about.industries.title': 'SERVING<br>CRITICAL<br>INDUSTRIES',
+  'about.industry.oil': 'OIL & GAS',
+  'about.industry.rail': 'RAIL',
+  'about.industry.energy': 'ENERGY',
+  'about.industry.steel': 'STEEL ERECTION',
+  'about.cta.title': 'READY TO DISCUSS<br>YOUR PROJECT?',
+  'about.cta.copy': "Send us a quick request - we'll recommend the right model for your task",
+  'about.cta.catalogue': 'View Catalogue'
+});
+Object.assign(translations.cz, {
+  'about.hero.title': 'OVĚŘENÁ JAPONSKÁ<br>SPOLEHLIVOST',
+  'about.hero.copy': 'Tým Feroxo dodává a servisuje svařovací zařízení SHINDAIWA od roku 2018 - nyní pro český a evropský trh',
+  'about.sector.oil.title': 'SEKTOR ROPY A PLYNU',
+  'about.sector.oil.text': 'Svařování potrubní<br>infrastruktury',
+  'about.sector.municipal.title': 'KOMUNÁLNÍ SEKTOR',
+  'about.sector.municipal.text': 'Opravy infrastruktury v terénu',
+  'about.sector.rail.title': 'ŽELEZNICE',
+  'about.sector.rail.text': 'Svařování železniční<br>infrastruktury',
+  'about.stat.label': 'jednotek zařízení SHINDAIWA<br>v provozu<br>od roku 2018',
+  'about.practice.title': 'OVĚŘENO<br>V PRAXI',
+  'about.practice.p1': 'Od roku 2018 dodáváme a podporujeme dieselové<br>svařovací generátory SHINDAIWA. Více než 170 jednotek nyní pracuje<br>na projektech ropy a plynu, v komunální a železniční infrastruktuře',
+  'about.practice.p2': 'Tyto zkušenosti jsou základem Feroxo v České republice. Víme,<br>jak SHINDAIWA funguje tam, kde na tom záleží nejvíce - na skutečných<br>staveništích, v dešti, mrazu i při nepřetržitém provozu',
+  'about.engineering.title': 'JAPONSKÉ<br>INŽENÝRSTVÍ',
+  'about.engineering.p1': 'SHINDAIWA, značka společnosti Yamabiko Corporation (Japonsko), se<br>od roku 1972 specializuje na profesionální svařovací generátory a<br>elektrocentrály',
+  'about.engineering.p2': 'Díky technickým inovacím, výrobní kvalitě a přísné kontrole jakosti<br>značka přinesla významné milníky - první dieselový svařovací generátor,<br>ultratichou technologii elektrocentrál a víceprocesní svařovací systémy',
+  'about.timeline.first': 'První motorový<br>svařovací generátor',
+  'about.reliability.fuel.title': 'ÚSPORNOST PALIVA',
+  'about.reliability.fuel.text': 'Nižší provozní náklady',
+  'about.reliability.service.title': 'DLOUHÁ ŽIVOTNOST',
+  'about.reliability.service.text': 'Méně prostojů',
+  'about.reliability.durable.title': 'ODOLNOST V TERÉNU',
+  'about.reliability.durable.text': 'Pro náročné podmínky',
+  'about.saving.title': 'SPOLEHLIVOST,<br>KTERÁ ŠETŘÍ NÁKLADY',
+  'about.saving.p1': 'V průmyslových a infrastrukturních projektech je spolehlivost důležitější<br>než pořizovací cena. SHINDAIWA je navržena pro nepřetržitý provoz,<br>úspornou spotřebu paliva, delší servisní intervaly a odolnou konstrukci',
+  'about.saving.p2': 'Feroxo tuto spolehlivost podporuje dostupností dílů,<br>technickou konzultací a servisní pomocí napříč<br>českým a evropským trhem',
+  'about.support.selection.title': 'VÝBĚR<br>VYBAVENÍ NA<br>MÍRU',
+  'about.support.selection.text': 'Podle technických požadavků<br>a provozních potřeb',
+  'about.support.warranty.title': 'LOKÁLNÍ SERVIS A<br>ZÁRUKA',
+  'about.support.warranty.text': 'Spolehlivá podpora po celou<br>životnost zařízení',
+  'about.support.parts.title': 'DOSTUPNOST<br>ORIGINÁLNÍCH DÍLŮ',
+  'about.support.parts.text': 'Originální díly SHINDAIWA<br>skladem v České republice',
+  'about.support.stage.title': 'PŘIPRAVENO PRO<br>STAGE V',
+  'about.support.stage.text': 'Zařízení odpovídá aktuálním<br>evropským emisním normám',
+  'about.support.heading': 'KOMPLETNÍ<br>PODPORA',
+  'about.industries.title': 'PODPORA<br>KRITICKÝCH<br>ODVĚTVÍ',
+  'about.industry.oil': 'ROPA A PLYN',
+  'about.industry.rail': 'ŽELEZNICE',
+  'about.industry.energy': 'ENERGETIKA',
+  'about.industry.steel': 'OCELÁŘSKÉ KONSTRUKCE',
+  'about.cta.title': 'JSTE PŘIPRAVENI PROBRAT<br>SVŮJ PROJEKT?',
+  'about.cta.copy': 'Pošlete krátkou poptávku - doporučíme vám správný model pro váš úkol',
+  'about.cta.catalogue': 'Zobrazit katalog'
+});
+
+// The About Us content block is registered after the initial global language pass.
+// Apply the active language once more so it is translated on first render.
+applyTranslations(currentLanguage);
+pageTitles.en['about.html'] = 'About Us - Feroxo';
+pageTitles.cz['about.html'] = 'O nás - Feroxo';
+applyTranslations(currentLanguage);
