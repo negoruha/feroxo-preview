@@ -399,7 +399,7 @@ const applyLooseTranslations = (lang) => {
 const getTranslation = (key, lang = currentLanguage) => translations[lang]?.[key] ?? translations.en[key] ?? '';
 let currentLanguage = localStorage.getItem('feroxo-language') || 'en';
 
-const applyTranslations = (lang) => {
+let applyTranslations = (lang) => {
   currentLanguage = translations[lang] ? lang : 'en';
   localStorage.setItem('feroxo-language', currentLanguage);
   document.documentElement.lang = currentLanguage === 'cz' ? 'cs' : 'en';

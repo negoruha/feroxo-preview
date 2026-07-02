@@ -6161,3 +6161,247 @@ html, body { max-width: 100%; overflow-x: clip; }
   .home-page .latest-news__feature img,
   .home-page .latest-news__stack a img { transition: none !important; }
 }
+
+
+/* ========================================================================
+   REQUEST MODAL — approved bottom action/privacy alignment
+   ======================================================================== */
+/* The frame reference places the privacy copy immediately after the Send
+   Request control, centred on the button’s vertical axis. */
+.request-modal .request-form__bottom {
+  justify-content: flex-start !important;
+  gap: calc(32 / 1632 * 100cqw) !important;
+}
+.request-modal .request-form__privacy {
+  display: block !important;
+  align-self: center !important;
+  margin: 0 !important;
+}
+@media (max-width: 760px) {
+  .request-modal .request-form__bottom {
+    gap: 12px !important;
+  }
+  .request-modal .request-form__privacy {
+    align-self: flex-start !important;
+  }
+}
+
+/* ========================================================================
+   PRODUCT DETAIL — final fix pass requested 02 Jul
+   1) header red side blocks must be fully rounded and exact desktop width
+   2) technical specifications / video / documents must stop at the
+      first-two-columns content width, not stretch to full page width
+   ======================================================================== */
+@media (min-width: 1201px) {
+  .detail-top::before,
+  .detail-top::after {
+    width: 324px !important;
+    height: 80px !important;
+    border-radius: 40px !important;
+  }
+}
+
+.product-detail-page .detail-section#specifications,
+.product-detail-page .detail-section#video,
+.product-detail-page .detail-section#documents {
+  width: min(1496px, 81.3043478261%) !important;
+  max-width: 1496px !important;
+}
+
+.product-detail-page .detail-section#video .detail-video,
+.product-detail-page .detail-section#video .detail-video__trigger,
+.product-detail-page .detail-section#documents .documents-grid,
+.product-detail-page .detail-section#specifications .technical-specs.technical-specs--figma {
+  width: 100% !important;
+  max-width: none !important;
+}
+
+@media (max-width: 1200px) {
+  .product-detail-page .detail-section#specifications,
+  .product-detail-page .detail-section#video,
+  .product-detail-page .detail-section#documents {
+    width: 100% !important;
+    max-width: 100% !important;
+  }
+}
+
+/* RESOURCES — keep the five approved Frame 369 tags inside every card.
+   The reference proportions are preserved, but the columns shrink together
+   with the card content instead of retaining a fixed 608px track width. */
+.resources-page .resource-card__tags {
+  width: 100% !important;
+  max-width: 608px !important;
+  grid-template-columns:
+    minmax(0, 1.43fr)
+    minmax(0, 1fr)
+    minmax(0, 1.45fr)
+    minmax(0, 1fr)
+    minmax(0, 1.02fr) !important;
+}
+.resources-page .resource-card__tags span {
+  min-width: 0 !important;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+/* ========================================================================
+   ABOUT US — exact three supplied reference blocks
+   Scoped to: Proven in Practice / Cost-saving Reliability / 1973 timeline.
+   These rules preserve the current i18n markup, so English and Czech both
+   translate while the composition matches the approved supplied artwork.
+   ======================================================================== */
+@media (min-width: 761px) {
+  .about-page .about-grid--intro > .about-proof {
+    height: calc(448 / 1840 * 100cqw);
+    min-height: 0;
+  }
+
+  .about-page .about-grid--intro > .about-reliability,
+  .about-page .about-grid--intro > .about-reliability + .about-copy-card {
+    height: calc(472 / 1840 * 100cqw);
+    min-height: 0;
+  }
+
+  .about-page .about-grid--intro > .about-copy-card:nth-of-type(3),
+  .about-page .about-timeline {
+    height: calc(472 / 1840 * 100cqw);
+    min-height: 0;
+  }
+
+  /* GROUP 88 — Proven in Practice */
+  .about-page .about-proof > img {
+    object-position: center center;
+  }
+  .about-page .about-proof__shade {
+    background: linear-gradient(90deg, rgba(13,2,2,.82) 0%, rgba(13,2,2,.64) 39%, rgba(13,2,2,.16) 72%, rgba(13,2,2,.04) 100%);
+  }
+  .about-page .about-proof__sectors {
+    left: calc(40 / 1840 * 100cqw);
+    top: calc(72 / 1840 * 100cqw);
+    gap: calc(30 / 1840 * 100cqw);
+  }
+  .about-page .about-proof__sectors > div {
+    grid-template-columns: calc(80 / 1840 * 100cqw) minmax(0, 1fr);
+    gap: calc(24 / 1840 * 100cqw);
+  }
+  .about-page .about-proof__sectors img {
+    width: calc(80 / 1840 * 100cqw);
+    height: calc(80 / 1840 * 100cqw);
+    padding: calc(20 / 1840 * 100cqw);
+    border: 1px solid rgba(250,250,250,.24);
+    border-radius: 50%;
+    filter: brightness(0) invert(1);
+  }
+  .about-page .about-proof__sectors span {
+    gap: calc(6 / 1840 * 100cqw);
+  }
+  .about-page .about-proof__sectors strong {
+    font-size: calc(32 / 1840 * 100cqw);
+    line-height: .85;
+    font-weight: 700;
+    letter-spacing: 0;
+    white-space: nowrap;
+  }
+  .about-page .about-proof__sectors small {
+    font-size: calc(20 / 1840 * 100cqw);
+    line-height: .94;
+    font-weight: 400;
+  }
+  .about-page .about-proof__stat {
+    right: calc(48 / 1840 * 100cqw);
+    top: calc(136 / 1840 * 100cqw);
+  }
+  .about-page .about-proof__stat strong {
+    font-size: calc(112 / 1840 * 100cqw);
+    line-height: .8;
+    letter-spacing: -.055em;
+  }
+  .about-page .about-proof__stat span {
+    margin-top: calc(13 / 1840 * 100cqw);
+    font-size: calc(20 / 1840 * 100cqw);
+    line-height: .92;
+  }
+
+  /* GROUP 89 — Cost-saving Reliability */
+  .about-page .about-reliability > img {
+    object-position: center center;
+  }
+  .about-page .about-reliability__shade {
+    background: linear-gradient(90deg, rgba(13,2,2,.82) 0%, rgba(13,2,2,.60) 38%, rgba(13,2,2,.20) 73%, rgba(13,2,2,.04) 100%);
+  }
+  .about-page .about-reliability__list {
+    left: calc(40 / 1840 * 100cqw);
+    top: calc(84 / 1840 * 100cqw);
+    gap: calc(32 / 1840 * 100cqw);
+  }
+  .about-page .about-reliability__list > div {
+    grid-template-columns: calc(80 / 1840 * 100cqw) minmax(0, 1fr);
+    gap: calc(24 / 1840 * 100cqw);
+  }
+  .about-page .about-reliability__list img {
+    width: calc(80 / 1840 * 100cqw);
+    height: calc(80 / 1840 * 100cqw);
+    padding: 0;
+    border: 0;
+    border-radius: 0;
+    filter: none;
+  }
+  .about-page .about-reliability__list span {
+    gap: calc(7 / 1840 * 100cqw);
+  }
+  .about-page .about-reliability__list strong {
+    font-size: calc(32 / 1840 * 100cqw);
+    line-height: .85;
+    font-weight: 700;
+    letter-spacing: 0;
+    white-space: nowrap;
+  }
+  .about-page .about-reliability__list small {
+    font-size: calc(20 / 1840 * 100cqw);
+    line-height: 1;
+    font-weight: 400;
+  }
+
+  /* GROUP 90 — 1973 timeline card */
+  .about-page .about-timeline {
+    grid-template-columns: 37.55% repeat(4, minmax(0, 1fr));
+    gap: calc(8 / 1840 * 100cqw);
+  }
+  .about-page .about-timeline > article {
+    border-radius: calc(24 / 1840 * 100cqw);
+  }
+  .about-page .about-timeline__highlight {
+    position: relative;
+    display: block !important;
+    padding: 0;
+  }
+  .about-page .about-timeline__highlight img {
+    position: absolute;
+    top: calc(54 / 472 * 100%);
+    left: 50%;
+    width: 70%;
+    height: auto;
+    margin: 0;
+    transform: translateX(-50%);
+  }
+  .about-page .about-timeline__highlight strong {
+    position: absolute;
+    left: 18%;
+    top: 67%;
+    margin: 0;
+    font-size: calc(72 / 1840 * 100cqw);
+    line-height: .85;
+    letter-spacing: -.05em;
+  }
+  .about-page .about-timeline__highlight span {
+    position: absolute;
+    left: 18%;
+    top: 84%;
+    margin: 0;
+    font-size: calc(20 / 1840 * 100cqw);
+    line-height: .98;
+  }
+  .about-page .about-timeline > article:not(.about-timeline__highlight) span {
+    font-size: calc(24 / 1840 * 100cqw);
+  }
+}
