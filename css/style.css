@@ -2168,7 +2168,7 @@ main {
 }
 
 /* --------------------------------------------------------------------------
-   Feroxo final reference pass — approved Figma system and responsive layouts
+   Feroxo final reference pass вЂ” approved Figma system and responsive layouts
    -------------------------------------------------------------------------- */
 :root {
   --page-bg: #FAFAFA;
@@ -2221,7 +2221,7 @@ body { font-family: Inter, Arial, Helvetica, sans-serif; }
 .inner-content { width: var(--page-width); margin: 34px auto 0; padding:0; }
 .inner-page main { padding-bottom: 0; }
 .breadcrumb { display:flex; align-items:center; flex-wrap:wrap; gap:10px; font-size: 14px; color: rgba(13,2,2,.72); margin: 22px 0 28px; }
-.breadcrumb span:not(:last-child)::after { content:'›'; margin-left:10px; opacity:.55; }
+.breadcrumb span:not(:last-child)::after { content:'вЂє'; margin-left:10px; opacity:.55; }
 
 /* Contact reference */
 .contact-top { min-height: 280px; }
@@ -2509,7 +2509,7 @@ body { font-family: Inter, Arial, Helvetica, sans-serif; }
 @media (max-width:760px) { .detail-top { width:var(--page-width); height:62px; min-height:62px; margin-top:10px; } .detail-top .site-header { top:0; left:10px; width:calc(100% - 20px); height:62px; min-height:62px; } .detail-top .site-header__logo img { width:82px; } .detail-top .language__button { width:30px; height:30px; } .detail-top .request-button { width:auto; min-width:88px; height:30px; font-size:10px; } }
 
 /* ========================================================================
-   HOME — Desktop - 15 parity pass
+   HOME вЂ” Desktop - 15 parity pass
    Source of truth: Project: main / Desktop - 15 only.
    These rules are deliberately scoped to the landing page.
    ======================================================================== */
@@ -3118,7 +3118,7 @@ body { font-family: Inter, Arial, Helvetica, sans-serif; }
 }
 
 /* ========================================================================
-   HOME TEST PASS — corrections from live preview feedback (2026-06-28)
+   HOME TEST PASS вЂ” corrections from live preview feedback (2026-06-28)
    Scope: landing page only. No other route geometry is changed here.
    ======================================================================== */
 
@@ -3149,7 +3149,7 @@ body { font-family: Inter, Arial, Helvetica, sans-serif; }
   text-align: inherit;
 }
 
-/* 3–4. Keep the footer below the complete news grid and give its columns
+/* 3вЂ“4. Keep the footer below the complete news grid and give its columns
    breathing room at all desktop widths. */
 .home-page main { display: block; position: relative; z-index: 1; }
 .home-page .latest-news { position: relative; z-index: 1; }
@@ -3174,7 +3174,7 @@ body { font-family: Inter, Arial, Helvetica, sans-serif; }
   white-space: nowrap;
 }
 
-/* 6. Make Request — Figma Frame 154 outer shell plus the precise inner
+/* 6. Make Request вЂ” Figma Frame 154 outer shell plus the precise inner
    cut-out contour. Controls remain real accessible form controls. */
 .home-page .request-modal {
   z-index: 120;
@@ -3299,7 +3299,7 @@ body { font-family: Inter, Arial, Helvetica, sans-serif; }
   padding: 0;
 }
 
-/* 7. On-site video overlay — no outbound YouTube navigation. */
+/* 7. On-site video overlay вЂ” no outbound YouTube navigation. */
 .video-modal {
   position: fixed;
   inset: 0;
@@ -3371,7 +3371,7 @@ body { font-family: Inter, Arial, Helvetica, sans-serif; }
 
 
 /* --------------------------------------------------------------------------
-   Contact page — exact approved Figma assets and geometry
+   Contact page вЂ” exact approved Figma assets and geometry
    -------------------------------------------------------------------------- */
 /* Sprite now works for both footer buttons and the semantic links used on
    product/resource/contact pages. */
@@ -3527,7 +3527,7 @@ body { font-family: Inter, Arial, Helvetica, sans-serif; }
 
 
 /* --------------------------------------------------------------------------
-   Products pass — card copy and reliable shared inner-page header alignment
+   Products pass вЂ” card copy and reliable shared inner-page header alignment
    -------------------------------------------------------------------------- */
 /* The original Figma header is 1192px wide inside a 1840px content area.
    Use proportional positioning on wide screens, then centre it before the
@@ -3627,7 +3627,7 @@ body { font-family: Inter, Arial, Helvetica, sans-serif; }
   .products-page .product-card p { min-height: 0; }
 }
 
-/* Resources article video — play inline in site modal, never leave for YouTube. */
+/* Resources article video вЂ” play inline in site modal, never leave for YouTube. */
 .article-video__trigger { display:block; position:relative; width:100%; padding:0; border:0; background:none; cursor:pointer; border-radius:16px; overflow:hidden; }
 .article-video__trigger:focus-visible { outline:3px solid rgba(191,33,33,.7); outline-offset:4px; }
 .article-video__trigger img { display:block; width:100%; }
@@ -3635,7 +3635,7 @@ body { font-family: Inter, Arial, Helvetica, sans-serif; }
 
 
 /* --------------------------------------------------------------------------
-   Product detail reference pass — Desktop - 8 / DGW300MS/UKV
+   Product detail reference pass вЂ” Desktop - 8 / DGW300MS/UKV
    -------------------------------------------------------------------------- */
 .detail-top {
   display:block;
@@ -3746,7 +3746,7 @@ body { font-family: Inter, Arial, Helvetica, sans-serif; }
 }
 
 /* ========================================================================
-   FINAL INTEGRATED HOME FIXES — 28 June 2026
+   FINAL INTEGRATED HOME FIXES вЂ” 28 June 2026
    These rules intentionally come last so every previously approved home
    correction is applied to the actual release package.
    ======================================================================== */
@@ -3838,7 +3838,7 @@ body { font-family: Inter, Arial, Helvetica, sans-serif; }
   column-gap: clamp(48px, 8vw, 150px);
 }
 
-/* Local in-page video modal — all home video triggers are buttons and are
+/* Local in-page video modal вЂ” all home video triggers are buttons and are
    never allowed to open YouTube or another tab. */
 .home-page .built-industry__video-card {
   cursor: pointer;
@@ -3871,7 +3871,7 @@ body { font-family: Inter, Arial, Helvetica, sans-serif; }
 
 
 /* ========================================================================
-   FINAL VISUAL POLISH — approved review corrections
+   FINAL VISUAL POLISH вЂ” approved review corrections
    ======================================================================== */
 
 /* Never allow a wide child to create a horizontal page scroll that clips the
@@ -4114,7 +4114,7 @@ html, body { max-width: 100%; overflow-x: clip; }
 }
 
 
-/* HOME FOOTER — final spacing pass.
+/* HOME FOOTER вЂ” final spacing pass.
    Keep the approved Component 10 positions, but give the three text columns
    enough horizontal air so long placeholder lines never visually merge. */
 @media (min-width: 761px) {
@@ -4136,7 +4136,7 @@ html, body { max-width: 100%; overflow-x: clip; }
 }
 
 
-/* Technical specification table — Figma alternating label cells */
+/* Technical specification table вЂ” Figma alternating label cells */
 .technical-specs.technical-specs--figma {
   grid-template-columns: repeat(4, minmax(0, 1fr));
   border-color: #D9D9D9;
@@ -4174,7 +4174,7 @@ html, body { max-width: 100%; overflow-x: clip; }
 }
 
 
-/* HOME — Latest News & Articles: exact approved Figma exports.
+/* HOME вЂ” Latest News & Articles: exact approved Figma exports.
    The three compact cards are supplied as completed visual tiles, including
    their blur and typography, so do not layer a second text/gradient above. */
 .home-page .latest-news__stack a::after,
@@ -4202,7 +4202,7 @@ html, body { max-width: 100%; overflow-x: clip; }
   }
 }
 
-/* HOME FOOTER — final column separation.
+/* HOME FOOTER вЂ” final column separation.
    Use stable Figma-based tracks on wide desktops and a flexible wrapping grid
    below them so placeholder text can never overlap another column. */
 @media (min-width: 1200px) {
@@ -4252,7 +4252,7 @@ html, body { max-width: 100%; overflow-x: clip; }
 
 
 /* --------------------------------------------------------------------------
-   Make Request — approved Frame 154 typography and control placement.
+   Make Request вЂ” approved Frame 154 typography and control placement.
    These rules preserve actual form functionality while matching the Figma
    layout: Inter Bold 112 / 85% for title, Inter Regular 24 / 100% intro,
    Inter Regular 14 / 100% form and privacy copy.
@@ -4336,7 +4336,7 @@ html, body { max-width: 100%; overflow-x: clip; }
 
 
 /* ========================================================================
-   CONTACT PAGE TYPOGRAPHY PASS — align with approved Figma reference
+   CONTACT PAGE TYPOGRAPHY PASS вЂ” align with approved Figma reference
    ======================================================================== */
 .contact-top .inner-top__title {
   padding: 0 24px 25px;
@@ -4432,7 +4432,7 @@ html, body { max-width: 100%; overflow-x: clip; }
 }
 
 /* ========================================================================
-   PRODUCTS PAGE TYPOGRAPHY — match Desktop - 7 Figma text metrics
+   PRODUCTS PAGE TYPOGRAPHY вЂ” match Desktop - 7 Figma text metrics
    ======================================================================== */
 .product-list-top .inner-top__title {
   padding: 0 24px 25px;
@@ -4489,7 +4489,7 @@ html, body { max-width: 100%; overflow-x: clip; }
 
 
 /* ========================================================================
-   PRODUCT DETAIL — Desktop 8 Figma typography and visual asset pass
+   PRODUCT DETAIL вЂ” Desktop 8 Figma typography and visual asset pass
    ======================================================================== */
 .product-detail-page,
 .product-detail-page button,
@@ -4701,7 +4701,7 @@ html, body { max-width: 100%; overflow-x: clip; }
 }
 
 /* ========================================================================
-   FINAL FOUR-CORRECTION PASS — approved image assets, text metrics and form
+   FINAL FOUR-CORRECTION PASS вЂ” approved image assets, text metrics and form
    ======================================================================== */
 
 /* Built for Industry: supplied Figma inspector specifies Inter Regular 24px,
@@ -4952,7 +4952,7 @@ html, body { max-width: 100%; overflow-x: clip; }
 
 
 /* ========================================================================
-   FINAL QA — request modal alignment + approved DGW300MS visual assets
+   FINAL QA вЂ” request modal alignment + approved DGW300MS visual assets
    ======================================================================== */
 .request-modal .request-form__privacy {
   margin-left: calc(12 / 1632 * 100cqw);
@@ -5546,7 +5546,7 @@ html, body { max-width: 100%; overflow-x: clip; }
 }
 
 
-/* SHARED FOOTER — use the approved Home footer on every route.
+/* SHARED FOOTER вЂ” use the approved Home footer on every route.
    The Home footer is the visual source of truth. Other pages receive the
    same component markup plus these exact desktop/tablet/mobile tracks. */
 .site-footer.footer--home-reference {
@@ -5694,7 +5694,7 @@ html, body { max-width: 100%; overflow-x: clip; }
 }
 
 /* ========================================================================
-   PRODUCT DETAIL — technical specification grid + full-width video/docs
+   PRODUCT DETAIL вЂ” technical specification grid + full-width video/docs
    Exact Desktop product reference pass; scoped only to product detail pages.
    ======================================================================== */
 .product-detail-page .detail-section#specifications,
@@ -5767,7 +5767,7 @@ html, body { max-width: 100%; overflow-x: clip; }
 }
 
 
-/* RESOURCES — exact Frame 369 category tags */
+/* RESOURCES вЂ” exact Frame 369 category tags */
 .resources-page .resource-card__tags {
   display: grid !important;
   grid-template-columns: 143px 100px 145px 100px 102px !important;
@@ -5821,7 +5821,7 @@ html, body { max-width: 100%; overflow-x: clip; }
 }
 
 
-/* PRODUCT DETAIL — header red flanks and approved home breadcrumb icon */
+/* PRODUCT DETAIL вЂ” header red flanks and approved home breadcrumb icon */
 .detail-top::before,
 .detail-top::after {
   content: '';
@@ -5864,7 +5864,7 @@ html, body { max-width: 100%; overflow-x: clip; }
 
 
 /* ========================================================================
-   CONTACT FEATURE ROW — Frame 209 text and typography reference
+   CONTACT FEATURE ROW вЂ” Frame 209 text and typography reference
    ======================================================================== */
 .contact-feature-row {
   container-type: inline-size;
@@ -5945,7 +5945,7 @@ html, body { max-width: 100%; overflow-x: clip; }
 }
 
 
-/* FRAME 154 — FINAL TYPOGRAPHY AND COPY ALIGNMENT */
+/* FRAME 154 вЂ” FINAL TYPOGRAPHY AND COPY ALIGNMENT */
 /* This narrow override only affects the shared Make Request modal. */
 .request-modal .request-modal__intro h2 {
   width: calc(620 / 1632 * 100cqw) !important;
@@ -6102,7 +6102,7 @@ html, body { max-width: 100%; overflow-x: clip; }
 }
 
 /* ========================================================================
-   HOME — image-only hero, red Latest News interaction and image delivery
+   HOME вЂ” image-only hero, red Latest News interaction and image delivery
    ======================================================================== */
 /* The hero carousel contains photographs only; the local video remains scoped
    to the separate Built for Industry module. */
@@ -6164,15 +6164,15 @@ html, body { max-width: 100%; overflow-x: clip; }
 
 
 /* ========================================================================
-   REQUEST MODAL — approved bottom action/privacy alignment
+   REQUEST MODAL вЂ” approved bottom action/privacy alignment
    ======================================================================== */
 /* The frame reference places the privacy copy immediately after the Send
-   Request control, centred on the button’s vertical axis. */
+   Request control, centred on the buttonвЂ™s vertical axis. */
 .request-modal .request-form__bottom {
   display: flex !important;
   align-items: center !important;
   justify-content: flex-start !important;
-  gap: calc(32 / 1632 * 100cqw) !important;
+  gap: calc(48 / 1632 * 100cqw) !important;
 }
 
 .request-modal .request-form__privacy {
@@ -6203,7 +6203,7 @@ html, body { max-width: 100%; overflow-x: clip; }
 }
 
 /* ========================================================================
-   PRODUCT DETAIL — final fix pass requested 02 Jul
+   PRODUCT DETAIL вЂ” final fix pass requested 02 Jul
    1) header red side blocks must be fully rounded and exact desktop width
    2) technical specifications / video / documents must stop at the
       first-two-columns content width, not stretch to full page width
@@ -6241,7 +6241,7 @@ html, body { max-width: 100%; overflow-x: clip; }
   }
 }
 
-/* RESOURCES — keep the five approved Frame 369 tags inside every card.
+/* RESOURCES вЂ” keep the five approved Frame 369 tags inside every card.
    The reference proportions are preserved, but the columns shrink together
    with the card content instead of retaining a fixed 608px track width. */
 .resources-page .resource-card__tags {
@@ -6261,7 +6261,7 @@ html, body { max-width: 100%; overflow-x: clip; }
 }
 
 /* ========================================================================
-   ABOUT US — exact three supplied reference blocks
+   ABOUT US вЂ” exact three supplied reference blocks
    Scoped to: Proven in Practice / Cost-saving Reliability / 1973 timeline.
    These rules preserve the current i18n markup, so English and Czech both
    translate while the composition matches the approved supplied artwork.
@@ -6284,7 +6284,7 @@ html, body { max-width: 100%; overflow-x: clip; }
     min-height: 0;
   }
 
-  /* GROUP 88 — Proven in Practice */
+  /* GROUP 88 вЂ” Proven in Practice */
   .about-page .about-proof > img {
     object-position: center center;
   }
@@ -6338,7 +6338,7 @@ html, body { max-width: 100%; overflow-x: clip; }
     line-height: .92;
   }
 
-  /* GROUP 89 — Cost-saving Reliability */
+  /* GROUP 89 вЂ” Cost-saving Reliability */
   .about-page .about-reliability > img {
     object-position: center center;
   }
@@ -6378,7 +6378,7 @@ html, body { max-width: 100%; overflow-x: clip; }
     font-weight: 400;
   }
 
-  /* GROUP 90 — 1973 timeline card */
+  /* GROUP 90 вЂ” 1973 timeline card */
   .about-page .about-timeline {
     grid-template-columns: 37.55% repeat(4, minmax(0, 1fr));
     gap: calc(8 / 1840 * 100cqw);
@@ -6422,12 +6422,12 @@ html, body { max-width: 100%; overflow-x: clip; }
   }
 }
 
-/* REQUEST MODAL — privacy text vertical alignment */
+/* REQUEST MODAL вЂ” privacy text vertical alignment */
 .request-modal .request-form__bottom {
   display: flex !important;
   align-items: center !important;
   justify-content: flex-start !important;
-  gap: calc(32 / 1632 * 100cqw) !important;
+  gap: calc(48 / 1632 * 100cqw) !important;
 }
 
 .request-modal .request-form__privacy {
