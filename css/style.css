@@ -6460,3 +6460,10 @@ html, body { max-width: 100%; overflow-x: clip; }
     transform: none !important;
   }
 }
+
+/* REQUEST MODAL — move privacy copy right on desktop */
+@media (min-width: 761px) {
+  .request-modal .request-form__privacy {
+    transform: translateX(24px) !important;
+  }
+}
