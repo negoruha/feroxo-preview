@@ -6421,3 +6421,42 @@ html, body { max-width: 100%; overflow-x: clip; }
     font-size: calc(24 / 1840 * 100cqw);
   }
 }
+
+/* REQUEST MODAL — privacy text vertical alignment */
+.request-modal .request-form__bottom {
+  display: flex !important;
+  align-items: center !important;
+  justify-content: flex-start !important;
+  gap: calc(32 / 1632 * 100cqw) !important;
+}
+
+.request-modal .request-form__privacy {
+  display: flex !important;
+  align-items: center !important;
+  align-self: stretch !important;
+  height: calc(50 / 1632 * 100cqw) !important;
+  max-width: calc(420 / 1632 * 100cqw) !important;
+  margin: 0 !important;
+}
+
+.request-modal .request-form__privacy > span {
+  display: block !important;
+  margin: 0 !important;
+  transform: translateY(-1px) !important;
+}
+
+@media (max-width: 760px) {
+  .request-modal .request-form__bottom {
+    gap: 12px !important;
+  }
+
+  .request-modal .request-form__privacy {
+    display: block !important;
+    align-self: flex-start !important;
+    height: auto !important;
+  }
+
+  .request-modal .request-form__privacy > span {
+    transform: none !important;
+  }
+}
