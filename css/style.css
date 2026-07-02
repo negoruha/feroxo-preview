@@ -6467,3 +6467,10 @@ html, body { max-width: 100%; overflow-x: clip; }
     transform: translateX(24px) !important;
   }
 }
+
+/* REQUEST MODAL — move privacy copy a bit more right on desktop */
+@media (min-width: 761px) {
+  .request-modal .request-form__privacy {
+    transform: translateX(40px) !important;
+  }
+}
