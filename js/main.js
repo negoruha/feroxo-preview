@@ -8,7 +8,7 @@ const translations = {
     'request.button': 'Make Request',
     'request.close': 'Close',
     'request.title': 'MAKE<br/>REQUEST',
-    'request.text': 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc vulputate libero et velit interdum, ac aliquet odio mattis. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos',
+    'request.text': 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc<br/>vulputate libero et velit interdum, ac aliquet odio mattis. Class<br/>aptent taciti sociosqu ad litora torquent per conubia nostra,<br/>per inceptos himenaeos',
     'request.placeholder.name': 'Name',
     'request.placeholder.company': 'Company',
     'request.placeholder.email': 'Email',
@@ -197,12 +197,12 @@ Object.assign(translations.en, {
   'contact.phone.title': 'Phone',
   'contact.hours.title': 'Business Hours',
   'contact.hours.text': 'Mon–Fri, 08:00–17:00 CET',
-  'contact.feature1.title': 'Industrial power solutions for Europe',
-  'contact.feature1.text': 'Feroxo supplies professional welding generators and industrial power equipment for infrastructure, rail, pipeline and heavy-duty field applications across Europe.',
-  'contact.feature2.title': 'European service support',
-  'contact.feature2.text': 'Technical support, spare parts availability, warranty coverage, and responsive after-sales assistance for demanding industrial environments.',
-  'contact.feature3.title': 'Need help choosing equipment?',
-  'contact.feature3.text': 'Our team can help you select the right welding generator or industrial power solution based on your project requirements and operating conditions.'
+  'contact.feature1.title': 'INDUSTRIAL POWER<br/>SOLUTIONS FOR EUROPE',
+  'contact.feature1.text': 'Feroxo supplies professional welding generators<br/>and industrial power equipment for infrastructure,<br/>rail, pipeline, and heavy-duty field applications<br/>across Europe. Engineered for reliable<br/>performance in demanding environments',
+  'contact.feature2.title': 'EUROPEAN SERVICE<br/>SUPPORT',
+  'contact.feature2.text': 'Technical support, spare parts availability,<br/>warranty coverage, and responsive after-sales<br/>assistance for demanding industrial environments<br/>across Central Europe. Helping keep equipment<br/>operating reliably in the field',
+  'contact.feature3.title': 'NEED HELP CHOOSING<br/>EQUIPMENT?',
+  'contact.feature3.text': 'Our team can help you select the right welding<br/>generator or industrial power solution based on<br/>your project requirements and operating<br/>conditions. Support for infrastructure, rail, and<br/>contractor applications'
 });
 Object.assign(translations.cz, {
   'footer.tagline': 'Prémiové japonské průmyslové<br>vybavení pro evropský trh',
@@ -257,12 +257,12 @@ Object.assign(translations.cz, {
   'contact.phone.title': 'Telefon',
   'contact.hours.title': 'Pracovní doba',
   'contact.hours.text': 'Po–Pá, 08:00–17:00 CET',
-  'contact.feature1.title': 'Průmyslová energetická řešení pro Evropu',
-  'contact.feature1.text': 'Feroxo dodává profesionální svařovací generátory a průmyslové energetické vybavení pro infrastrukturu, železnici, potrubní a těžké terénní aplikace po celé Evropě.',
-  'contact.feature2.title': 'Evropská servisní podpora',
-  'contact.feature2.text': 'Technická podpora, dostupnost náhradních dílů, záruční krytí a rychlá poprodejní asistence pro náročná průmyslová prostředí.',
-  'contact.feature3.title': 'Potřebujete poradit s výběrem vybavení?',
-  'contact.feature3.text': 'Náš tým vám pomůže vybrat správný svařovací generátor nebo průmyslové energetické řešení podle požadavků projektu a provozních podmínek.'
+  'contact.feature1.title': 'PRŮMYSLOVÁ ENERGETICKÁ<br/>ŘEŠENÍ PRO EVROPU',
+  'contact.feature1.text': 'Feroxo dodává profesionální svařovací generátory<br/>a průmyslové energetické vybavení pro infrastrukturu,<br/>železnici, potrubní a náročné terénní aplikace v celé Evropě.<br/>Zařízení je navrženo pro spolehlivý výkon<br/>v náročných podmínkách.',
+  'contact.feature2.title': 'EVROPSKÁ SERVISNÍ<br/>PODPORA',
+  'contact.feature2.text': 'Technická podpora, dostupnost náhradních dílů,<br/>záruční krytí a rychlá poprodejní asistence<br/>pro náročná průmyslová prostředí ve střední Evropě.<br/>Pomáháme udržet zařízení spolehlivě<br/>v provozu v terénu.',
+  'contact.feature3.title': 'POTŘEBUJETE POMOC<br/>S VÝBĚREM VYBAVENÍ?',
+  'contact.feature3.text': 'Náš tým vám pomůže vybrat správný svařovací generátor<br/>nebo průmyslové energetické řešení podle požadavků<br/>projektu a provozních podmínek. Podpora pro infrastrukturu,<br/>železnici a dodavatelské aplikace.'
 });
 
 
@@ -424,6 +424,18 @@ const applyTranslations = (lang) => {
     if (text) node.setAttribute('aria-label', text);
   });
 
+  // Request privacy markup is translated with innerHTML. Restore the correct
+  // relative policy URL on root, section and nested product/resource pages.
+  document.querySelectorAll('.request-form__privacy a').forEach((link) => {
+    const path = window.location.pathname;
+    const prefix = /\/pages\/(?:products|categories|resources)\//.test(path)
+      ? '../../'
+      : /\/pages\//.test(path)
+        ? '../'
+        : '';
+    link.setAttribute('href', `${prefix}pages/privacy-policy.html`);
+  });
+
   document.querySelectorAll('[data-lang-option]').forEach((button) => {
     button.classList.toggle('is-active', button.dataset.langOption === currentLanguage);
   });
@@ -497,28 +509,30 @@ const heroSlides = [...document.querySelectorAll('[data-hero-slide]')];
 const heroPrev = document.querySelector('[data-hero-prev]');
 const heroNext = document.querySelector('[data-hero-next]');
 const heroDots = [...document.querySelectorAll('[data-hero-dot]')];
-const heroMedia = document.querySelector('[data-hero-media]');
-const heroVideo = document.querySelector('[data-hero-video]');
 let heroIndex = 0;
+
+// The home hero is intentionally image-only. Non-initial slide photography is
+// loaded only when it is about to be shown, which keeps the first render light.
+const loadHeroSlideImage = (slide) => {
+  const image = slide?.querySelector('img[data-src]');
+  if (!image) return;
+  image.src = image.dataset.src;
+  image.removeAttribute('data-src');
+};
+
+const primeHeroImages = () => {
+  if (!heroSlides.length) return;
+  [heroIndex, (heroIndex + 1) % heroSlides.length, (heroIndex - 1 + heroSlides.length) % heroSlides.length]
+    .forEach((index) => loadHeroSlideImage(heroSlides[index]));
+};
 
 const updateHeroSlider = () => {
   if (!heroTrack || !heroSlides.length) return;
   heroIndex = Math.max(0, Math.min(heroIndex, heroSlides.length - 1));
+  primeHeroImages();
   heroTrack.style.transform = `translateX(${-heroIndex * 100}%)`;
   heroSlides.forEach((slide, index) => slide.classList.toggle('is-active', index === heroIndex));
   heroDots.forEach((dot, index) => dot.classList.toggle('is-active', index === heroIndex));
-};
-
-const playHeroVideo = async () => {
-  if (!heroMedia || !heroVideo) return;
-  try {
-    heroMedia.classList.add('is-video-active');
-    heroVideo.currentTime = 0;
-    heroVideo.muted = false;
-    await heroVideo.play();
-  } catch (error) {
-    heroMedia.classList.add('is-video-active');
-  }
 };
 
 heroPrev?.addEventListener('click', (event) => {
@@ -541,18 +555,16 @@ heroDots.forEach((dot) => {
   });
 });
 
-document.querySelectorAll('[data-hero-play]').forEach((button) => {
-  button.addEventListener('click', (event) => {
-    event.preventDefault();
-    playHeroVideo();
-  });
-});
-
-heroVideo?.addEventListener('ended', () => heroMedia?.classList.remove('is-video-active'));
-heroVideo?.addEventListener('pause', () => {
-  if (heroVideo.currentTime === 0 || heroVideo.ended) heroMedia?.classList.remove('is-video-active');
-});
 updateHeroSlider();
+
+// Finish warming the remaining lightweight WebP carousel photos after first
+// paint, so dot navigation is instant without competing with the initial hero.
+const preloadRemainingHeroImages = () => heroSlides.forEach(loadHeroSlideImage);
+if ('requestIdleCallback' in window) {
+  window.requestIdleCallback(preloadRemainingHeroImages, { timeout: 1600 });
+} else {
+  window.setTimeout(preloadRemainingHeroImages, 900);
+}
 
 const strengthCards = [...document.querySelectorAll('[data-strength-card]')];
 const setActiveStrength = (activeCard) => {

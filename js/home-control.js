@@ -52,15 +52,6 @@
     button.addEventListener('click', closeLocalVideo);
   });
 
-  /* The hero remains a carousel, but clicking any visual slide launches the
-     local project video instead of following an outbound destination. */
-  $$('[data-hero-play]').forEach((slide) => {
-    slide.addEventListener('dblclick', (event) => {
-      event.preventDefault();
-      openLocalVideo();
-    });
-  });
-
   window.addEventListener('keydown', (event) => {
     if (event.key === 'Escape') closeLocalVideo();
   });
@@ -78,12 +69,12 @@
       footerCompany: 'Company',
       footerLinks: ['About Us', 'Products', 'Service', 'Resources', 'Contact'],
       requestTitle: 'MAKE<br>REQUEST',
-      requestText: 'Tell us about your project and we will help you select the right Feroxo equipment.',
+      requestText: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc vulputate libero et velit interdum, ac aliquet odio mattis. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos',
       selected: 'Selected Equipment',
       equipmentHelp: 'Not sure what you need yet?<br>Browse our equipment catalog<br>or leave this section empty',
       browse: 'Browse Equipment',
       send: 'Send Request',
-      privacy: 'By submitting this form you agree to our <a href="pages/privacy-policy.html">Privacy Policy</a>. We never share data with third parties.',
+      privacy: 'By submitting this form you agree to our <a href="pages/privacy-policy.html">Privacy Policy</a>.<br>We never share data with third parties.',
       strengths: [
         ['TRUE JAPANESE<br>MANUFACTURING', 'Not assembled — engineered'],
         ['BUILT FOR THE WORST —<br>PERFORMS LIKE THE BEST', 'Spill containment. No shelter required'],
