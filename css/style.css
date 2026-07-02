@@ -6474,3 +6474,10 @@ html, body { max-width: 100%; overflow-x: clip; }
     transform: translateX(40px) !important;
   }
 }
+
+/* REQUEST MODAL — centre Send Request button inside its outline */
+@media (min-width: 761px) {
+  .request-modal .request-form__bottom > button {
+    transform: translateX(calc(10 / 1632 * 100cqw)) !important;
+  }
+}
