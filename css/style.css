@@ -6169,19 +6169,35 @@ html, body { max-width: 100%; overflow-x: clip; }
 /* The frame reference places the privacy copy immediately after the Send
    Request control, centred on the button’s vertical axis. */
 .request-modal .request-form__bottom {
+  display: flex !important;
+  align-items: center !important;
   justify-content: flex-start !important;
   gap: calc(32 / 1632 * 100cqw) !important;
 }
+
 .request-modal .request-form__privacy {
-  display: block !important;
-  align-self: center !important;
+  display: flex !important;
+  align-items: center !important;
+  flex: 0 0 calc(420 / 1632 * 100cqw) !important;
+  max-width: none !important;
   margin: 0 !important;
 }
+
+.request-modal .request-form__privacy span {
+  display: block !important;
+  width: 100% !important;
+  text-align: left !important;
+  line-height: 1.15 !important;
+}
+
 @media (max-width: 760px) {
   .request-modal .request-form__bottom {
     gap: 12px !important;
   }
+
   .request-modal .request-form__privacy {
+    flex: 0 1 auto !important;
+    width: 100% !important;
     align-self: flex-start !important;
   }
 }
